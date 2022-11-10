@@ -252,12 +252,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
-        MainWindow.setCentralWidget(self.centralwidget)
-
-        ####buttons
         self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_1))
         self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_2))
-
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)

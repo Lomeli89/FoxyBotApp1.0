@@ -35,7 +35,7 @@ class Ui_VentanaIngreso(object):
 
         '''Eventos registro ir'''
 
-        self.btn_irRegistrate.clicked.connect(self.abrir)
+        self.btn_irRegistrate.clicked.connect(self.abrir_Registro)
         self.btn_irRegistrate.clicked.connect(VentanaIngreso.close)
         '''Evento probar foxybot como visitante'''
         self.btn_PruebaFoxyBot.clicked.connect(self.abrir_Visitante)
@@ -50,7 +50,7 @@ class Ui_VentanaIngreso(object):
         QtCore.QMetaObject.connectSlotsByName(VentanaIngreso)
 
     '''Eventos registro ir'''
-    def abrir(self):
+    def abrir_Registro(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = Ui_VentanaRegistro()
         self.ui.setupUi(self.ventana)

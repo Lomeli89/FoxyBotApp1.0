@@ -1,14 +1,16 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from VentanaIngreso import *
 
-class Ui_VentanaEstudiante(object):
-    def setupUi(self, VentanaEstudiante):
-        VentanaEstudiante.setObjectName("VentanaEstudiante")
-        VentanaEstudiante.resize(1028, 538)
-        VentanaEstudiante.setMinimumSize(QtCore.QSize(1000, 500))
-        VentanaEstudiante.setStyleSheet("background-color: rgb(45, 45, 45);")
-        self.centralwidget = QtWidgets.QWidget(VentanaEstudiante)
+
+class Ui_VentanaEditor(object):
+    def setupUi(self, VentanaEditor):
+        VentanaEditor.setObjectName("VentanaEditor")
+        VentanaEditor.resize(1028, 538)
+        VentanaEditor.setMinimumSize(QtCore.QSize(1000, 500))
+        VentanaEditor.setStyleSheet("background-color: rgb(45, 45, 45);")
+        self.centralwidget = QtWidgets.QWidget(VentanaEditor)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -362,32 +364,39 @@ class Ui_VentanaEstudiante(object):
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
-        VentanaEstudiante.setCentralWidget(self.centralwidget)
+        self.btn_cerrarSesion.clicked.connect(self.cerrarSesion)
+        self.btn_cerrarSesion.clicked.connect(VentanaEditor.close)
+        VentanaEditor.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(VentanaEstudiante)
+        self.retranslateUi(VentanaEditor)
         self.stackedWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(VentanaEstudiante)
+        QtCore.QMetaObject.connectSlotsByName(VentanaEditor)
 
-    def retranslateUi(self, VentanaEstudiante):
+    def cerrarSesion(self):
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = Ui_VentanaIngreso()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+    def retranslateUi(self, VentanaEditor):
         _translate = QtCore.QCoreApplication.translate
-        VentanaEstudiante.setWindowTitle(_translate("VentanaEstudiante", "MainWindow"))
-        self.btn_chat.setText(_translate("VentanaEstudiante", "Chat"))
-        self.label_2.setText(_translate("VentanaEstudiante", "Nombre_user"))
-        self.label_3.setText(_translate("VentanaEstudiante", "Editor"))
-        self.btn_cerrarSesion.setText(_translate("VentanaEstudiante", "Cerrar Sesión"))
-        self.btn_about.setText(_translate("VentanaEstudiante", "Sobre Foxy Bot"))
-        self.btn_about_2.setText(_translate("VentanaEstudiante", "Solicitudes Recibidas"))
-        self.btn_about_3.setText(_translate("VentanaEstudiante", "Solicitudes Resueltas"))
-        self.btn_about_4.setText(_translate("VentanaEstudiante", "Menú de Contenido"))
-        self.btn_about_6.setText(_translate("VentanaEstudiante", "Ajustes"))
-        self.btn_about_7.setText(_translate("VentanaEstudiante", "Solicitudes"))
+        VentanaEditor.setWindowTitle(_translate("VentanaEditor", "MainWindow"))
+        self.btn_chat.setText(_translate("VentanaEditor", "Chat"))
+        self.label_2.setText(_translate("VentanaEditor", "Nombre_user"))
+        self.label_3.setText(_translate("VentanaEditor", "Editor"))
+        self.btn_cerrarSesion.setText(_translate("VentanaEditor", "Cerrar Sesión"))
+        self.btn_about.setText(_translate("VentanaEditor", "Sobre Foxy Bot"))
+        self.btn_about_2.setText(_translate("VentanaEditor", "Solicitudes Recibidas"))
+        self.btn_about_3.setText(_translate("VentanaEditor", "Solicitudes Resueltas"))
+        self.btn_about_4.setText(_translate("VentanaEditor", "Menú de Contenido"))
+        self.btn_about_6.setText(_translate("VentanaEditor", "Ajustes"))
+        self.btn_about_7.setText(_translate("VentanaEditor", "Solicitudes"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    VentanaEstudiante = QtWidgets.QMainWindow()
-    ui = Ui_VentanaEstudiante()
-    ui.setupUi(VentanaEstudiante)
-    VentanaEstudiante.show()
+    VentanaEditor = QtWidgets.QMainWindow()
+    ui = Ui_VentanaEditor()
+    ui.setupUi(VentanaEditor)
+    VentanaEditor.show()
     sys.exit(app.exec_())

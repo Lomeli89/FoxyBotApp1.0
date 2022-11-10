@@ -1,11 +1,11 @@
 from PyQt5 import QtCore, QtWidgets
 
 from VentanaIngreso import *
-from ventanas.VentanaIngreso import Ui_VentanaIngreso
-
+from VentanaVisitante import *
+from VentanaEstudiante import *
 
 class Ui_VentanaRegistro(object):
-    def setupUi(self, VentanaRegistro):
+    def setupUi(self, VentanaRegistro: object):
         VentanaRegistro.setObjectName("VentanaRegistro")
         VentanaRegistro.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(VentanaRegistro)
@@ -41,12 +41,12 @@ class Ui_VentanaRegistro(object):
         self.label_Password_Reg = QtWidgets.QLabel(self.centralwidget)
         self.label_Password_Reg.setGeometry(QtCore.QRect(270, 250, 71, 16))
         self.label_Password_Reg.setObjectName("label_Password_Reg")
-
-        self.btn_irIniciarSesion.clicked.connect(self.abrir_Ingreso)
+        ############################################################
+        ######################################
         self.btn_irIniciarSesion.clicked.connect(VentanaRegistro.close)
+        self.btn_irIniciarSesion.clicked.connect(self.abrir_Ingreso)
 
         VentanaRegistro.setCentralWidget(self.centralwidget)
-
         self.retranslateUi(VentanaRegistro)
         QtCore.QMetaObject.connectSlotsByName(VentanaRegistro)
 
