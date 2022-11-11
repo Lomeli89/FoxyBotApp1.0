@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from VentanaIngreso import *
+
 
 class Ui_VentanaEstudiante(object):
     def setupUi(self, VentanaEstudiante):
@@ -384,10 +384,11 @@ class Ui_VentanaEstudiante(object):
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
+        VentanaEstudiante.setCentralWidget(self.centralwidget)
+
         self.btn_cerrarSesion.clicked.connect(self.cerrarSesion)
         self.btn_cerrarSesion.clicked.connect(VentanaEstudiante.close)
 
-        VentanaEstudiante.setCentralWidget(self.centralwidget)
         self.retranslateUi(VentanaEstudiante)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(VentanaEstudiante)

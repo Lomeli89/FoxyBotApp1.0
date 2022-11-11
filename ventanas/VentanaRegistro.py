@@ -1,11 +1,9 @@
 from PyQt5 import QtCore, QtWidgets
 
-from VentanaIngreso import *
-from VentanaVisitante import *
-from VentanaEstudiante import *
 
 class Ui_VentanaRegistro(object):
     def setupUi(self, VentanaRegistro: object):
+
         VentanaRegistro.setObjectName("VentanaRegistro")
         VentanaRegistro.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(VentanaRegistro)
@@ -45,6 +43,9 @@ class Ui_VentanaRegistro(object):
         ######################################
         self.btn_irIniciarSesion.clicked.connect(VentanaRegistro.close)
         self.btn_irIniciarSesion.clicked.connect(self.abrir_Ingreso)
+        #################################################
+        self.btn_Registrarme.clicked.connect(VentanaRegistro.close)
+        self.btn_Registrarme.clicked.connect(self.abrir_Ingreso)
 
         VentanaRegistro.setCentralWidget(self.centralwidget)
         self.retranslateUi(VentanaRegistro)
@@ -52,7 +53,8 @@ class Ui_VentanaRegistro(object):
 
     def abrir_Ingreso(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_VentanaIngreso()
+        from ventanas import VentanaIngreso
+        self.ui = VentanaIngreso.Ui_VentanaIngreso()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 

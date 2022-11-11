@@ -252,14 +252,34 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
-        self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_1))
-        self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_2))
+        #self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_1))
+        #self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWitget(self.page_2))
+
+        ################################################
+        self.btn_iniciarSesion.clicked.connect(MainWindow.close )
+        self.btn_iniciarSesion.clicked.connect(self.abrirIngreso)
+
+        self.btn_registro.clicked.connect(MainWindow.close)
+        self.btn_registro.clicked.connect(self.abrirRegistro)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def abrirIngreso(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaIngreso import Ui_VentanaIngreso
+        self.ui = Ui_VentanaIngreso()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+    def abrirRegistro(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaRegistro import Ui_VentanaRegistro
+        self.ui = Ui_VentanaRegistro()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))

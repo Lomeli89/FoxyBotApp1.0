@@ -1,7 +1,5 @@
-from PyQt5 import QtCore, QtWidgets
-from VentanaRegistro import *
-from VentanaVisitante import *
 from VentanaEstudiante import *
+
 class Ui_VentanaIngreso(object):
 
     def setupUi(self, VentanaIngreso):
@@ -52,6 +50,7 @@ class Ui_VentanaIngreso(object):
     '''Eventos registro ir'''
     def abrir_Registro(self):
         self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaRegistro import Ui_VentanaRegistro
         self.ui = Ui_VentanaRegistro()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
@@ -59,6 +58,7 @@ class Ui_VentanaIngreso(object):
     '''Evento probar foxybot como visitante'''
     def abrir_Visitante(self):
         self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaVisitante import Ui_MainWindow
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
@@ -68,6 +68,7 @@ class Ui_VentanaIngreso(object):
         self.ui = Ui_VentanaEstudiante()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
+
 
     def retranslateUi(self, VentanaIngreso):
         _translate = QtCore.QCoreApplication.translate
