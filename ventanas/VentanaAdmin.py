@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_VentanaEstudiante(object):
-    def setupUi(self, VentanaEstudiante):
-        VentanaEstudiante.setObjectName("VentanaEstudiante")
-        VentanaEstudiante.resize(1028, 538)
-        VentanaEstudiante.setMinimumSize(QtCore.QSize(1000, 500))
-        VentanaEstudiante.setStyleSheet("background-color: rgb(45, 45, 45);")
-        self.centralwidget = QtWidgets.QWidget(VentanaEstudiante)
+class Ui_VentanaAdmin(object):
+    def setupUi(self, VentanaAdmin):
+        VentanaAdmin.setObjectName("VentanaAdmin")
+        VentanaAdmin.resize(1028, 501)
+        VentanaAdmin.setMinimumSize(QtCore.QSize(1000, 500))
+        VentanaAdmin.setStyleSheet("background-color: rgb(45, 45, 45);")
+        self.centralwidget = QtWidgets.QWidget(VentanaAdmin)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -107,31 +107,8 @@ class Ui_VentanaEstudiante(object):
 "font: 25 11pt \"Calibri Light\";\n"
 "background-color: transparent;")
         self.label_3.setObjectName("label_3")
-        self.btn_cerrarSesion = QtWidgets.QPushButton(self.frame_3)
-        self.btn_cerrarSesion.setGeometry(QtCore.QRect(20, 450, 171, 30))
-        self.btn_cerrarSesion.setMinimumSize(QtCore.QSize(0, 30))
-        self.btn_cerrarSesion.setStyleSheet("QPushButton {\n"
-"    font: 9pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    \n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
-        self.btn_cerrarSesion.setFlat(False)
-        self.btn_cerrarSesion.setObjectName("btn_cerrarSesion")
         self.btn_about = QtWidgets.QPushButton(self.frame_3)
-        self.btn_about.setGeometry(QtCore.QRect(20, 190, 171, 30))
+        self.btn_about.setGeometry(QtCore.QRect(20, 210, 171, 30))
         self.btn_about.setMinimumSize(QtCore.QSize(0, 30))
         self.btn_about.setStyleSheet("QPushButton {\n"
 "    font: 11.5pt \"Calibri\";\n"
@@ -161,12 +138,12 @@ class Ui_VentanaEstudiante(object):
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.btn_about_2 = QtWidgets.QPushButton(self.frame_3)
-        self.btn_about_2.setGeometry(QtCore.QRect(20, 150, 171, 30))
+        self.btn_about_2.setGeometry(QtCore.QRect(20, 170, 171, 30))
         self.btn_about_2.setMinimumSize(QtCore.QSize(0, 30))
         self.btn_about_2.setStyleSheet("QPushButton {\n"
 "    font: 11.5pt \"Calibri\";\n"
 "    color: rgb(255, 255, 255);\n"
-"    padding-left:-27px;\n"
+"    padding-left:-2px;\n"
 "    background-color: rgb(0, 46, 109);\n"
 "    border: 0px solid;\n"
 "    border-radius:15px;\n"
@@ -183,36 +160,13 @@ class Ui_VentanaEstudiante(object):
 "")
         self.btn_about_2.setFlat(False)
         self.btn_about_2.setObjectName("btn_about_2")
-        self.btn_about_6 = QtWidgets.QPushButton(self.frame_3)
-        self.btn_about_6.setGeometry(QtCore.QRect(20, 220, 171, 30))
-        self.btn_about_6.setMinimumSize(QtCore.QSize(0, 30))
-        self.btn_about_6.setStyleSheet("QPushButton {\n"
-"    font: 11.5pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:-27px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
-        self.btn_about_6.setFlat(False)
-        self.btn_about_6.setObjectName("btn_about_6")
         self.btn_about_7 = QtWidgets.QPushButton(self.frame_3)
-        self.btn_about_7.setGeometry(QtCore.QRect(20, 120, 171, 30))
+        self.btn_about_7.setGeometry(QtCore.QRect(20, 130, 171, 30))
         self.btn_about_7.setMinimumSize(QtCore.QSize(0, 30))
         self.btn_about_7.setStyleSheet("QPushButton {\n"
 "    font: 11.5pt \"Calibri\";\n"
 "    color: rgb(255, 255, 255);\n"
-"    padding-left:-27px;\n"
+"    padding-left:0px;\n"
 "    background-color: rgb(0, 46, 109);\n"
 "    border: 0px solid;\n"
 "    border-radius:15px;\n"
@@ -229,11 +183,34 @@ class Ui_VentanaEstudiante(object):
 "")
         self.btn_about_7.setFlat(False)
         self.btn_about_7.setObjectName("btn_about_7")
+        self.btn_cerrarSesion = QtWidgets.QPushButton(self.frame_3)
+        self.btn_cerrarSesion.setGeometry(QtCore.QRect(30, 480, 171, 30))
+        self.btn_cerrarSesion.setMinimumSize(QtCore.QSize(0, 30))
+        self.btn_cerrarSesion.setStyleSheet("QPushButton {\n"
+"    font: 9pt \"Calibri\";\n"
+"    color: rgb(255, 255, 255);\n"
+"    padding-left:-50px;\n"
+"    background-color: rgb(0, 46, 109);\n"
+"    border: 0px solid;\n"
+"    border-radius:15px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(93, 129, 163);\n"
+"}\n"
+"\n"
+"\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"")
+        self.btn_cerrarSesion.setFlat(False)
+        self.btn_cerrarSesion.setObjectName("btn_cerrarSesion")
         self.verticalLayout_3.addWidget(self.frame_3)
         self.horizontalLayout_2.addWidget(self.frame_left_menu)
         self.frame_pages = QtWidgets.QFrame(self.Content)
         self.frame_pages.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.frame_pages.setStyleSheet("background-color: rgb(167, 182, 203);")
+        self.frame_pages.setStyleSheet("background-color: rgb(217, 217, 217);")
         self.frame_pages.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_pages.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_pages.setObjectName("frame_pages")
@@ -302,53 +279,223 @@ class Ui_VentanaEstudiante(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.frame_2)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 751, 471))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.gridLayout_4 = QtWidgets.QGridLayout()
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.label_17 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_17.setText("")
+        self.label_17.setObjectName("label_17")
+        self.verticalLayout_11.addWidget(self.label_17)
+        self.gridLayout_4.addLayout(self.verticalLayout_11, 1, 0, 1, 1)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.label_15 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_15.setObjectName("label_15")
+        self.horizontalLayout_6.addWidget(self.label_15)
+        self.gridLayout_4.addLayout(self.horizontalLayout_6, 1, 1, 1, 1)
+        self.label_16 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_16.setObjectName("label_16")
+        self.gridLayout_4.addWidget(self.label_16, 1, 5, 1, 1)
+        self.label_13 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_13.setObjectName("label_13")
+        self.gridLayout_4.addWidget(self.label_13, 1, 3, 1, 1)
+        self.label_14 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_14.setObjectName("label_14")
+        self.gridLayout_4.addWidget(self.label_14, 1, 4, 1, 1)
+        self.btn_Nuevo_4 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.btn_Nuevo_4.setMinimumSize(QtCore.QSize(0, 30))
+        self.btn_Nuevo_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_Nuevo_4.setStyleSheet("QPushButton {\n"
+"    \n"
+"    font: 14pt \"Calibri\";\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(0, 46, 109);\n"
+"    border: 0px solid;\n"
+"    border-radius:15px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(93, 129, 163);\n"
+"}\n"
+"\n"
+"\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"")
+        self.btn_Nuevo_4.setFlat(False)
+        self.btn_Nuevo_4.setObjectName("btn_Nuevo_4")
+        self.gridLayout_4.addWidget(self.btn_Nuevo_4, 0, 4, 1, 1)
+        self.btn_Nuevo_3 = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.btn_Nuevo_3.setEnabled(False)
+        self.btn_Nuevo_3.setMinimumSize(QtCore.QSize(0, 30))
+        self.btn_Nuevo_3.setStyleSheet("QPushButton {\n"
+"    \n"
+"    font: 14pt \"Calibri\";\n"
+"    color: rgb(255, 255, 255);\n"
+"    \n"
+"    background-color: rgb(210, 0, 0);\n"
+"    border: 0px solid;\n"
+"    border-radius:15px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(93, 129, 163);\n"
+"}\n"
+"\n"
+"\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"")
+        self.btn_Nuevo_3.setFlat(False)
+        self.btn_Nuevo_3.setObjectName("btn_Nuevo_3")
+        self.gridLayout_4.addWidget(self.btn_Nuevo_3, 0, 5, 1, 1)
+        self.label_18 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_18.setObjectName("label_18")
+        self.gridLayout_4.addWidget(self.label_18, 0, 0, 1, 2)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem, 2, 3, 1, 1)
+        self.verticalLayout_4.addLayout(self.gridLayout_4)
         self.verticalLayout_6.addWidget(self.frame_2)
         self.stackedWidget.addWidget(self.page_2)
-        self.page_3 = QtWidgets.QWidget()
-        self.page_3.setObjectName("page_3")
-        self.stackedWidget.addWidget(self.page_3)
-        self.page_4 = QtWidgets.QWidget()
-        self.page_4.setObjectName("page_4")
-        self.stackedWidget.addWidget(self.page_4)
-        self.page_5 = QtWidgets.QWidget()
-        self.page_5.setObjectName("page_5")
-        self.stackedWidget.addWidget(self.page_5)
-        self.page_6 = QtWidgets.QWidget()
-        self.page_6.setObjectName("page_6")
-        self.stackedWidget.addWidget(self.page_6)
-        self.page_7 = QtWidgets.QWidget()
-        self.page_7.setObjectName("page_7")
-        self.stackedWidget.addWidget(self.page_7)
         self.page_8 = QtWidgets.QWidget()
         self.page_8.setObjectName("page_8")
+        self.frame_7 = QtWidgets.QFrame(self.page_8)
+        self.frame_7.setGeometry(QtCore.QRect(10, 10, 778, 498))
+        self.frame_7.setStyleSheet("QFrame{\n"
+"    background-color: rgb(217, 217, 217);\n"
+"    border-radius:26px;\n"
+"\n"
+"}")
+        self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.frame_7)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 751, 471))
+        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.gridLayout_5 = QtWidgets.QGridLayout()
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.label_19 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_19.setObjectName("label_19")
+        self.verticalLayout_13.addWidget(self.label_19)
+        self.gridLayout_5.addLayout(self.verticalLayout_13, 1, 0, 1, 1)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.label_20 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_7.addWidget(self.label_20)
+        self.gridLayout_5.addLayout(self.horizontalLayout_7, 1, 1, 1, 1)
+        self.label_21 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_21.setObjectName("label_21")
+        self.gridLayout_5.addWidget(self.label_21, 1, 5, 1, 1)
+        self.label_22 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_22.setObjectName("label_22")
+        self.gridLayout_5.addWidget(self.label_22, 1, 3, 1, 1)
+        self.label_23 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_23.setObjectName("label_23")
+        self.gridLayout_5.addWidget(self.label_23, 1, 4, 1, 1)
+        self.label_24 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label_24.setObjectName("label_24")
+        self.gridLayout_5.addWidget(self.label_24, 0, 0, 1, 2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem1, 2, 3, 1, 1)
+        self.btn_Nuevo_5 = QtWidgets.QPushButton(self.verticalLayoutWidget_2)
+        self.btn_Nuevo_5.setMinimumSize(QtCore.QSize(0, 30))
+        self.btn_Nuevo_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_Nuevo_5.setStyleSheet("QPushButton {\n"
+"    \n"
+"    font: 14pt \"Calibri\";\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(0, 46, 109);\n"
+"    border: 0px solid;\n"
+"    border-radius:15px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(93, 129, 163);\n"
+"}\n"
+"\n"
+"\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"")
+        self.btn_Nuevo_5.setFlat(False)
+        self.btn_Nuevo_5.setObjectName("btn_Nuevo_5")
+        self.gridLayout_5.addWidget(self.btn_Nuevo_5, 0, 5, 1, 1)
+        self.verticalLayout_12.addLayout(self.gridLayout_5)
         self.stackedWidget.addWidget(self.page_8)
+        self.page = QtWidgets.QWidget()
+        self.page.setObjectName("page")
+        self.frame_8 = QtWidgets.QFrame(self.page)
+        self.frame_8.setGeometry(QtCore.QRect(10, 10, 781, 501))
+        self.frame_8.setStyleSheet("QFrame{\n"
+"    background-color: rgb(217, 217, 217);\n"
+"    border-radius:26px;\n"
+"\n"
+"}")
+        self.frame_8.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_8.setObjectName("frame_8")
+        self.label_25 = QtWidgets.QLabel(self.frame_8)
+        self.label_25.setGeometry(QtCore.QRect(370, 190, 141, 61))
+        self.label_25.setStyleSheet("font: 16pt \"Calibri\";")
+        self.label_25.setObjectName("label_25")
+        self.stackedWidget.addWidget(self.page)
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
-        VentanaEstudiante.setCentralWidget(self.centralwidget)
+        VentanaAdmin.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(VentanaEstudiante)
-        self.stackedWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(VentanaEstudiante)
+        self.retranslateUi(VentanaAdmin)
+        self.stackedWidget.setCurrentIndex(2)
+        QtCore.QMetaObject.connectSlotsByName(VentanaAdmin)
 
-    def retranslateUi(self, VentanaEstudiante):
+    def retranslateUi(self, VentanaAdmin):
         _translate = QtCore.QCoreApplication.translate
-        VentanaEstudiante.setWindowTitle(_translate("VentanaEstudiante", "MainWindow"))
-        self.btn_chat.setText(_translate("VentanaEstudiante", "Chat"))
-        self.label_2.setText(_translate("VentanaEstudiante", "Nombre_user"))
-        self.label_3.setText(_translate("VentanaEstudiante", "Administrador"))
-        self.btn_cerrarSesion.setText(_translate("VentanaEstudiante", "Cerrar Sesión"))
-        self.btn_about.setText(_translate("VentanaEstudiante", "Sobre Foxy Bot"))
-        self.btn_about_2.setText(_translate("VentanaEstudiante", "Gestión de Editores"))
-        self.btn_about_6.setText(_translate("VentanaEstudiante", "Ajustes"))
-        self.btn_about_7.setText(_translate("VentanaEstudiante", "Gestion de servicios"))
+        VentanaAdmin.setWindowTitle(_translate("VentanaAdmin", "MainWindow"))
+        self.btn_chat.setText(_translate("VentanaAdmin", "Chat"))
+        self.label_2.setText(_translate("VentanaAdmin", "Nombre_user"))
+        self.label_3.setText(_translate("VentanaAdmin", "Administrador"))
+        self.btn_about.setText(_translate("VentanaAdmin", "Sobre Foxy Bot"))
+        self.btn_about_2.setText(_translate("VentanaAdmin", "Gestión de editores"))
+        self.btn_about_7.setText(_translate("VentanaAdmin", "Gestion de servicios"))
+        self.btn_cerrarSesion.setText(_translate("VentanaAdmin", "Cerrar Sesión"))
+        self.label_15.setText(_translate("VentanaAdmin", "Titulo"))
+        self.label_16.setText(_translate("VentanaAdmin", "Fecha de adición"))
+        self.label_13.setText(_translate("VentanaAdmin", "Numero de soluciones"))
+        self.label_14.setText(_translate("VentanaAdmin", "Agregado por "))
+        self.btn_Nuevo_4.setText(_translate("VentanaAdmin", "+Nuevo"))
+        self.btn_Nuevo_3.setText(_translate("VentanaAdmin", "Eliminar"))
+        self.label_18.setText(_translate("VentanaAdmin", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Gestión de servicios</span></p></body></html>"))
+        self.label_19.setText(_translate("VentanaAdmin", "Estado"))
+        self.label_20.setText(_translate("VentanaAdmin", "Nombre"))
+        self.label_21.setText(_translate("VentanaAdmin", "Fecha de adición"))
+        self.label_22.setText(_translate("VentanaAdmin", "Correo electronico"))
+        self.label_23.setText(_translate("VentanaAdmin", "Núm. Empleado"))
+        self.label_24.setText(_translate("VentanaAdmin", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Gestión de editores</span></p></body></html>"))
+        self.btn_Nuevo_5.setText(_translate("VentanaAdmin", "+Nuevo"))
+        self.label_25.setText(_translate("VentanaAdmin", "<html><head/><body><p><span style=\" font-size:18pt;\">FOXYBOT v0.1</span></p></body></html>"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    VentanaEstudiante = QtWidgets.QMainWindow()
-    ui = Ui_VentanaEstudiante()
-    ui.setupUi(VentanaEstudiante)
-    VentanaEstudiante.show()
+    VentanaAdmin = QtWidgets.QMainWindow()
+    ui = Ui_VentanaAdmin()
+    ui.setupUi(VentanaAdmin)
+    VentanaAdmin.show()
     sys.exit(app.exec_())

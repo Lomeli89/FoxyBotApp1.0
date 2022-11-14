@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>VentanaVisitante</class>
+ <widget class="QMainWindow" name="VentanaVisitante">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1016</width>
-    <height>539</height>
+    <height>541</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -269,10 +269,10 @@ font: 25 11pt &quot;Calibri Light&quot;;
 background-color: transparent;</string>
              </property>
              <property name="text">
-              <string>Visitante</string>
+              <string>Estudiante</string>
              </property>
             </widget>
-            <widget class="QPushButton" name="btn_iniciarSesion">
+            <widget class="QPushButton" name="btn_cerrarSesion">
              <property name="geometry">
               <rect>
                <x>30</x>
@@ -311,52 +311,7 @@ QPushButton:hover {
 </string>
              </property>
              <property name="text">
-              <string>Iniciar Sesión</string>
-             </property>
-             <property name="flat">
-              <bool>false</bool>
-             </property>
-            </widget>
-            <widget class="QPushButton" name="btn_registro">
-             <property name="geometry">
-              <rect>
-               <x>30</x>
-               <y>470</y>
-               <width>171</width>
-               <height>30</height>
-              </rect>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="cursor">
-              <cursorShape>PointingHandCursor</cursorShape>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-	font: 9pt &quot;Calibri&quot;;
-	color: rgb(255, 255, 255);
-	padding-left:-59px;
-	background-color: rgb(0, 46, 109);
-	border: 0px solid;
-	border-radius:15px;
-}
-QPushButton:hover {
-	background-color: rgb(93, 129, 163);
-}
-
-
-	
-	
-	
-	
-</string>
-             </property>
-             <property name="text">
-              <string>Registrarse</string>
+              <string>Cerrar Sesión</string>
              </property>
              <property name="flat">
               <bool>false</bool>
@@ -458,7 +413,7 @@ QPushButton:hover {
              <number>0</number>
             </property>
             <widget class="QWidget" name="page_1">
-             <layout class="QVBoxLayout" name="verticalLayout_7">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
                <widget class="QFrame" name="frame">
                 <property name="styleSheet">
@@ -498,32 +453,6 @@ QPushButton:hover {
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <widget class="QLineEdit" name="lineEdit">
-                  <property name="geometry">
-                   <rect>
-                    <x>100</x>
-                    <y>9</y>
-                    <width>541</width>
-                    <height>51</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLineEdit{
-	
-	
-	
-	
-	background-color: rgb(167, 182, 203);
-	padding-top:1px;
-	border-radius:25px;
-	
-	border-color: rgb(0, 46, 109);
-}</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string>¡Escribe aquí tus dudas!</string>
-                  </property>
-                 </widget>
                  <widget class="QPushButton" name="pushButton">
                   <property name="geometry">
                    <rect>
@@ -556,9 +485,9 @@ QPushButton:hover {
                   <property name="geometry">
                    <rect>
                     <x>20</x>
-                    <y>10</y>
+                    <y>0</y>
                     <width>61</width>
-                    <height>51</height>
+                    <height>61</height>
                    </rect>
                   </property>
                   <property name="contextMenuPolicy">
@@ -571,27 +500,84 @@ QPushButton:hover {
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>../img/ico.png</pixmap>
+                   <pixmap>../../../Downloads/icoUser.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
                   </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
                  </widget>
+                 <widget class="QFrame" name="frame_4">
+                  <property name="geometry">
+                   <rect>
+                    <x>100</x>
+                    <y>11</y>
+                    <width>541</width>
+                    <height>51</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame{
+	
+	
+	
+	
+	
+	
+	background-color: rgb(148, 148, 148);
+	padding-top:1px;
+	border-radius:25px;
+	
+	border-color: rgb(0, 46, 109);
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>541</width>
+                     <height>51</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+	
+	
+	
+	
+	background-color: rgb(217, 217, 217);
+	padding-top:1px;
+	border-radius:25px;
+	
+	border-color: rgb(0, 46, 109);
+}</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>¡Escribe aquí tus dudas!</string>
+                   </property>
+                  </widget>
+                 </widget>
+                 <zorder>frame_4</zorder>
+                 <zorder>pushButton</zorder>
+                 <zorder>label_5</zorder>
                 </widget>
-                <widget class="QTextEdit" name="output_chat_text">
+                <widget class="QListView" name="listView">
                  <property name="geometry">
                   <rect>
-                   <x>10</x>
-                   <y>10</y>
-                   <width>751</width>
-                   <height>371</height>
+                   <x>20</x>
+                   <y>20</y>
+                   <width>721</width>
+                   <height>351</height>
                   </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(0, 0, 0);</string>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
                  </property>
                 </widget>
                </widget>
@@ -615,6 +601,22 @@ QPushButton:hover {
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>340</x>
+                   <y>220</y>
+                   <width>141</width>
+                   <height>61</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 16pt &quot;Calibri&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;FOXYBOT v0.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
                </widget>
               </item>
              </layout>

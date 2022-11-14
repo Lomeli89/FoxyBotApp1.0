@@ -30,7 +30,23 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-color:#808080;</string>
+     <string notr="true">QLineEdit{
+	
+	
+	
+	
+	background-color: rgb(217, 217, 217);
+	padding-top:1px;
+	border-radius:15px;
+	
+	border-color: rgb(0, 46, 109);
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>70</number>
+    </property>
+    <property name="placeholderText">
+     <string>Email</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="input_Password">
@@ -43,10 +59,26 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-color:#808080;</string>
+     <string notr="true">QLineEdit{
+	
+	
+	
+	
+	background-color: rgb(217, 217, 217);
+	padding-top:1px;
+	border-radius:15px;
+	
+	border-color: rgb(0, 46, 109);
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>60</number>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Contraseña</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_iniciarSesion">
@@ -58,6 +90,16 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-radius:10px;
+font: 10pt &quot;Nirmala UI&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(1, 45, 108);</string>
+    </property>
     <property name="text">
      <string>Iniciar sesión</string>
     </property>
@@ -68,11 +110,18 @@
       <x>410</x>
       <y>390</y>
       <width>75</width>
-      <height>23</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font: 75 11pt &quot;Calibri&quot;;</string>
+    </property>
     <property name="text">
-     <string>Registrate</string>
+     <string>¡Registrate!</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_eresNuevo">
@@ -81,7 +130,7 @@
       <x>340</x>
       <y>390</y>
       <width>71</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -97,10 +146,46 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-radius:10px;
+font: 10pt &quot;Nirmala UI&quot;;
+color: rgb(1, 45, 108);
+background-color: rgb(217, 217, 217);</string>
+    </property>
     <property name="text">
      <string>¡PRUEBA A FOXY BOT!</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>451</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/title.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>input_Email</zorder>
+   <zorder>input_Password</zorder>
+   <zorder>btn_iniciarSesion</zorder>
+   <zorder>btn_irRegistrate</zorder>
+   <zorder>label_eresNuevo</zorder>
+   <zorder>btn_PruebaFoxyBot</zorder>
   </widget>
  </widget>
  <resources/>

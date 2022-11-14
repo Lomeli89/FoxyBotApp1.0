@@ -10,11 +10,16 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from PyQt5.QtWidgets import QWidget,QApplication, QListWidget, QDialog,QListWidgetItem,QWidgetItem
+
+from RecWid import Widget as recWidget
+from SenWid import Widget as senWidget
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1016, 539)
+        MainWindow.resize(1016, 550)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
         MainWindow.setStyleSheet("background-color: rgb(45, 45, 45);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -201,8 +206,8 @@ class Ui_MainWindow(object):
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.page_1)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.page_1)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame = QtWidgets.QFrame(self.page_1)
         self.frame.setStyleSheet("QFrame{\n"
 "    background-color: rgb(217, 217, 217);\n"
@@ -224,20 +229,6 @@ class Ui_MainWindow(object):
         self.frame_input_messages.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_input_messages.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_input_messages.setObjectName("frame_input_messages")
-        self.lineEdit = QtWidgets.QLineEdit(self.frame_input_messages)
-        self.lineEdit.setGeometry(QtCore.QRect(100, 9, 541, 51))
-        self.lineEdit.setStyleSheet("QLineEdit{\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"    background-color: rgb(167, 182, 203);\n"
-"    padding-top:1px;\n"
-"    border-radius:25px;\n"
-"    \n"
-"    border-color: rgb(0, 46, 109);\n"
-"}")
-        self.lineEdit.setObjectName("lineEdit")
         self.pushButton = QtWidgets.QPushButton(self.frame_input_messages)
         self.pushButton.setGeometry(QtCore.QRect(660, 10, 51, 51))
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -253,19 +244,53 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton.setObjectName("pushButton")
         self.label_5 = QtWidgets.QLabel(self.frame_input_messages)
-        self.label_5.setGeometry(QtCore.QRect(20, 10, 61, 51))
+        self.label_5.setGeometry(QtCore.QRect(20, 0, 61, 61))
         self.label_5.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.label_5.setStyleSheet("")
         self.label_5.setText("")
-        self.label_5.setPixmap(QtGui.QPixmap("../img/ico.png"))
+        self.label_5.setPixmap(QtGui.QPixmap("../../../Downloads/icoUser.png"))
         self.label_5.setScaledContents(True)
+        self.label_5.setWordWrap(True)
         self.label_5.setObjectName("label_5")
-        self.output_chat_text = QtWidgets.QTextEdit(self.frame)
-        self.output_chat_text.setGeometry(QtCore.QRect(10, 10, 751, 371))
-        self.output_chat_text.setStyleSheet("color: rgb(0, 0, 0);")
-        self.output_chat_text.setReadOnly(True)
-        self.output_chat_text.setObjectName("output_chat_text")
-        self.verticalLayout_7.addWidget(self.frame)
+        self.frame_4 = QtWidgets.QFrame(self.frame_input_messages)
+        self.frame_4.setGeometry(QtCore.QRect(100, 11, 541, 51))
+        self.frame_4.setStyleSheet("QFrame{\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"    background-color: rgb(148, 148, 148);\n"
+"    padding-top:1px;\n"
+"    border-radius:25px;\n"
+"    \n"
+"    border-color: rgb(0, 46, 109);\n"
+"}")
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame_4)
+        self.lineEdit.setGeometry(QtCore.QRect(0, 0, 541, 51))
+        self.lineEdit.setStyleSheet("QLineEdit{\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"    background-color: rgb(217, 217, 217);\n"
+"    padding-top:1px;\n"
+"    border-radius:25px;\n"
+"    \n"
+"    border-color: rgb(0, 46, 109);\n"
+"}")
+        self.lineEdit.setObjectName("lineEdit")
+        self.frame_4.raise_()
+        self.pushButton.raise_()
+        self.label_5.raise_()
+        self.listView = QtWidgets.QListView(self.frame)
+        self.listView.setGeometry(QtCore.QRect(20, 20, 721, 351))
+        self.listView.setObjectName("listView")
+        self.horizontalLayout_3.addWidget(self.frame)
         self.stackedWidget.addWidget(self.page_1)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -285,6 +310,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.stackedWidget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.btn_iniciarSesion.clicked.connect(MainWindow.close)
         self.btn_iniciarSesion.clicked.connect(self.abrirIngreso)
@@ -295,8 +321,7 @@ class Ui_MainWindow(object):
         self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_1))
         self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_2))
 
-
-        MainWindow.setCentralWidget(self.centralwidget)
+        self.pushButton.clicked.connect(self.sendMessage)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
@@ -316,6 +341,14 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
+    def sendMessage(self):
+        sendW = senWidget()
+        sendW.label_2.setText(str(self.lineEdit.text()))
+        item = QListWidgetItem()
+        item.setSizeHint(sendW.sizeHint())
+        self.listView.addAction(item)
+        self.listView.addAction(item, sendW)
+        self.listView.setMinimumWidth(sendW.width())
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -325,8 +358,8 @@ class Ui_MainWindow(object):
         self.btn_iniciarSesion.setText(_translate("MainWindow", "Iniciar Sesión"))
         self.btn_registro.setText(_translate("MainWindow", "Registrarse"))
         self.btn_about.setText(_translate("MainWindow", "Sobre Foxy Bot"))
-        self.lineEdit.setPlaceholderText(_translate("MainWindow", "¡Escribe aquí tus dudas!"))
         self.pushButton.setText(_translate("MainWindow", "Enviar"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "¡Escribe aquí tus dudas!"))
 
 
 if __name__ == "__main__":
