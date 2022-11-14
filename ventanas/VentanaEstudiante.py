@@ -294,8 +294,11 @@ class Ui_VentanaEstudiante(object):
         self.btn_cerrarSesion.clicked.connect(self.cerrarSesion)
         self.btn_cerrarSesion.clicked.connect(VentanaEstudiante.close)
 
+        self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_1))
+        self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_2))
+
     def cerrarSesion(self):
-        self.ventana = QtWidgets.QMainWindow()
+        self.ventana = QtWidgets.QDialog()
         from ventanas.VentanaIngreso import Ui_VentanaIngreso
         self.ui = Ui_VentanaIngreso()
         self.ui.setupUi(self.ventana)

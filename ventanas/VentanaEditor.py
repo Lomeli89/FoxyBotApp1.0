@@ -364,6 +364,18 @@ class Ui_VentanaEditor(object):
         self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(VentanaEditor)
 
+        self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_1))
+        self.btn_menuContenido.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_2))
+        self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_8))
+
+        self.btn_Nuevo.clicked.connect(self.nuevoContenido)
+    def nuevoContenido(self):
+
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.AgregarContenido import Ui_agregarContenido
+        self.ui = Ui_agregarContenido()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
     def retranslateUi(self, VentanaEditor):
         _translate = QtCore.QCoreApplication.translate
         VentanaEditor.setWindowTitle(_translate("VentanaEditor", "MainWindow"))

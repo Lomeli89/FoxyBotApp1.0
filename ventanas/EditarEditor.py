@@ -169,6 +169,8 @@ class Ui_editarEditor(object):
         self.btn_Nuevo_2.clicked.connect(editarEditor.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(editarEditor)
 
+
+
     def retranslateUi(self, editarEditor):
         _translate = QtCore.QCoreApplication.translate
         editarEditor.setWindowTitle(_translate("editarEditor", "Dialog"))

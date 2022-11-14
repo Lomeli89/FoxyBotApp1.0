@@ -463,7 +463,17 @@ class Ui_VentanaAdmin(object):
         self.retranslateUi(VentanaAdmin)
         self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(VentanaAdmin)
-
+        self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_1))
+        self.btn_about_7.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_2))
+        self.btn_about_2.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_8))
+        self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))
+        self.btn_Nuevo_5.clicked.connect(self.agregarEditor)
+    def agregarEditor(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.AgregarEditor import Ui_agregarEditor
+        self.ui = Ui_agregarEditor()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
     def retranslateUi(self, VentanaAdmin):
         _translate = QtCore.QCoreApplication.translate
         VentanaAdmin.setWindowTitle(_translate("VentanaAdmin", "MainWindow"))
