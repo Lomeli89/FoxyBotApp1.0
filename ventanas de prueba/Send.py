@@ -36,6 +36,7 @@ class Ui_Form(object):
         self.groupBox_2.setTitle("")
         self.groupBox_2.setObjectName("groupBox_2")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox_2)
+        self.verticalLayout_3.setContentsMargins(-1, 0, -1, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_2 = QtWidgets.QLabel(self.groupBox_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
@@ -44,6 +45,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
         self.label_2.setSizePolicy(sizePolicy)
         self.label_2.setStyleSheet("font: 12pt \"Calibri\";")
+        self.label_2.setText("")
         self.label_2.setWordWrap(True)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_3.addWidget(self.label_2)
@@ -58,7 +60,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../../../Downloads/icoUser.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("../img/icoUser.jpg"))
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -72,7 +74,6 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_2.setText(_translate("Form", "kdjnsaijndd najdns jkndjn djndjnd djsnamdna sk"))
 
 
 if __name__ == "__main__":

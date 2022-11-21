@@ -56,6 +56,12 @@
            <string/>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_2">
              <property name="sizePolicy">
@@ -68,7 +74,7 @@
               <string notr="true">font: 12pt &quot;Calibri&quot;;</string>
              </property>
              <property name="text">
-              <string>kdjnsaijndd najdns jkndjn djndjnd djsnamdna sk</string>
+              <string/>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
@@ -94,7 +100,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>../../../Downloads/icoUser.jpg</pixmap>
+           <pixmap>../img/icoUser.jpg</pixmap>
           </property>
          </widget>
         </item>
