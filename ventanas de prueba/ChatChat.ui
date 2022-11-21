@@ -80,6 +80,9 @@
         </layout>
        </widget>
       </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
      </layout>
     </widget>
    </item>
