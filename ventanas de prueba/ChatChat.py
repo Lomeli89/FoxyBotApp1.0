@@ -57,9 +57,9 @@ class Ui_Dialog(object):
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout.addWidget(self.pushButton)
         self.verticalLayout_2.addWidget(self.groupBox_3)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.verticalLayout_2.addWidget(self.lineEdit_2)
+        self.reclineEdit = QtWidgets.QLineEdit(self.groupBox)
+        self.reclineEdit.setObjectName("reclineEdit")
+        self.verticalLayout_2.addWidget(self.reclineEdit)
         self.verticalLayout.addWidget(self.groupBox)
 
         self.retranslateUi(Dialog)

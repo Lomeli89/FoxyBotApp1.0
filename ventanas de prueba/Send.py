@@ -9,9 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLabel
 
 
 class Ui_Form(object):
+    label_2: QLabel
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(400, 106)
