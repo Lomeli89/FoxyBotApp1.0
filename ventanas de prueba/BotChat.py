@@ -4,8 +4,11 @@ from recibeWidget import  Widget as recWidget
 from sendWidget import Widget as senWidget
 from threading import Thread
 from _thread import *
-import socket , sendWidget
-sock = None
+import socket
+import os
+
+#conn = None
+
 
 class Dialog(QDialog, dialog):
     def __init__(self, parent=None):
@@ -21,15 +24,15 @@ class Dialog(QDialog, dialog):
     def sendMessage(self):
         sendW = senWidget()
         sendW.label_2.setText(str(self.lineEdit.text()))
-        if sock != None:
+        '''if conn != None:
             label_2 = self.lineEdit.text().decode('utf-8')
-            sock.send(label_2)
-
+            conn.send(label_2)'''
         item = QListWidgetItem()
         item.setSizeHint(sendW.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item, sendW)
         self.listWidget.setMinimumWidth(sendW.width())
+        self.lineEdit.setText('')
     def recMessage(self,text):
         recW = recWidget()
         recW.label_2.setText(str(text))
@@ -38,32 +41,3 @@ class Dialog(QDialog, dialog):
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item, recW)
         self.listWidget.setMinimumWidth(recW.width())
-class clientThread(Thread):
-    def __init__(self, widow):
-        Thread.__init__(self)
-        self.window = widow
-    def run(self):
-        global sock
-        sock = socket.socket()
-        host = "localhost"
-        port = 8000
-        print("esperando conexión...")
-        try:
-            sock.connect((host, port))
-            while True:
-                message = sock.recv(1024)
-                clearM = message.decode('utf-8')
-                self.window.reclineEdit.setText(str(clearM))
-        except socket.error as e:
-            print(str(e))
-def main():
-    from sys import argv
-    app = QApplication(argv)
-    dialog = Dialog()
-    dialog.show()
-    client = clientThread(dialog)
-    client.start()
-    app.exec_()
-
-if __name__ == '__main__':
-    main()
