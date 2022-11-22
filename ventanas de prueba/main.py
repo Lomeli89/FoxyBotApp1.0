@@ -9,9 +9,9 @@ import os
 
 #conn = None
 
-text_temp = str("1 = escuela")
-text_temp2 = str("2 = alumno")
-
+text_temp = str("2")
+text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
+text = str
 
 
 class Dialog(QDialog, dialog):
@@ -19,10 +19,10 @@ class Dialog(QDialog, dialog):
         super(Dialog, self).__init__(parent)
         QDialog.__init__(self)
         self.setupUi(self)
+        self.bienvenidaAutomatica()
         self.pushButton.clicked.connect(self.sendMessage)
-        self.pushButton.clicked.connect(self.recMessage)
         self.reclineEdit.setHidden(True)
-        self.reclineEdit.textChanged.connect(self.recMessage)
+       # self.reclineEdit.textChanged.connect(self.recMessage)
 
 
     #logica
@@ -30,7 +30,8 @@ class Dialog(QDialog, dialog):
     def sendMessage(self):
         sendW = senWidget()
         sendW.label_2.setText(str(self.lineEdit.text()))
-        print(self.lineEdit.text())
+        print(f"Contenido de lineEdit : {self.lineEdit.text()}")
+        print(f"Contenido de sendW : {str(sendW.label_2.text())}")
         '''if conn != None:
             label_2 = self.lineEdit.text().decode('utf-8')
             conn.send(label_2)'''
@@ -39,23 +40,61 @@ class Dialog(QDialog, dialog):
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item, sendW)
         self.listWidget.setMinimumWidth(sendW.width())
-        print("texto enviado")
+        print("texto enviado correctamente")
         self.lineEdit.setText('')
-        print("entrada limpiada")
+        print("campo de texto limpio")
+        #respuesta hola >> hi
+        if str(sendW.label_2.text()) == "1+1":
+            print("texto recibido")
+            recW = recWidget()
+            text = text_temp
+            recW.label_2.setText(str(text))
+            recW.label_2.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_2.text()}")
+        else:
+            print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
+            print("texto recibido")
+            recW = recWidget()
+            text = text_temp2
+            recW.label_2.setText(str(text))
+            recW.label_2.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_2.text()}")
 
     def recMessage(self,text):
         print("------------incio funcion 2-----------")
         recW = recWidget()
-        recW.label_2.setText(str(self.lineEdit.text()))
         #recW.label_2.setText(str(text))
         item = QListWidgetItem()
         item.setSizeHint(recW.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item, recW)
         self.listWidget.setMinimumWidth(recW.width())
+    '''def resBot(self):
+        while True:
+            if '''
 
-
-
+    def bienvenidaAutomatica(self):
+        print("texto recibido")
+        recW = recWidget()
+        text = "Hola Bienvenido, soy FoxyBot, estoy para ayudarte con tus dudas acerca del area de control escolar."
+        recW.label_2.setText(str(text))
+        recW.label_2.text()
+        item = QListWidgetItem()
+        item.setSizeHint(recW.sizeHint())
+        self.listWidget.addItem(item)
+        self.listWidget.setItemWidget(item, recW)
+        self.listWidget.setMinimumWidth(recW.width())
+        print(f"contenido de recibido {recW.label_2.text()}")
 
 
 '''class serverThread(Thread):
