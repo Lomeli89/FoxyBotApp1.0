@@ -95,14 +95,42 @@ class Ui_VentanaIngreso(object):
         self.btn_PruebaFoxyBot.clicked.connect(self.abrir_Visitante)
         self.btn_PruebaFoxyBot.clicked.connect(VentanaIngreso.close)
         '''Evento probar foxybot como estudiante'''
-        self.btn_iniciarSesion.clicked.connect(self.abrir_Estudiante)
-        # self.btn_iniciarSesion.clicked.connect(self.verificacion)
-        self.btn_iniciarSesion.clicked.connect(VentanaIngreso.close)
+        self.btn_iniciarSesion.clicked.connect(self.vfnIngreso)
+        #self.btn_iniciarSesion.clicked.connect(VentanaIngreso.close)
+
+    def senDatos(self):
+        print("datos")
+
+    def vfnIngreso(self):
+        varEmail = str
+        varPass = str
+        varEmail(str(self.input_Email.text()))
+        varPass(str(self.input_Password.text()))
+        if str(self.input_Email.text()) == "19380605@loscabos.tecnm.mx" and str(self.input_Password.text()) == "1234":
+            print("Ingresado exitosamente")
+            self.input_Email.setText("")
+            VentanaIngreso.close()
+            self.abrir_Estudiante()
+        elif str(self.input_Email.text()) == "admin" and str(self.input_Password.text()) == "1234":
+            self.input_Email.setText("")
+            VentanaIngreso.close()
+            self.abrir_Admin()
+        else:
+            import tkinter
+            from tkinter import messagebox
+            error = tkinter.messagebox.showerror("Error", "datos incorrectos")
+
 
     def abrir_Registro(self):
         self.ventana = QtWidgets.QMainWindow()
         from ventanas.VentanaRegistro import Ui_VentanaRegistro
         self.ui = Ui_VentanaRegistro()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+    def abrir_Admin(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaAdmin import Ui_VentanaAdmin
+        self.ui = Ui_VentanaAdmin()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 

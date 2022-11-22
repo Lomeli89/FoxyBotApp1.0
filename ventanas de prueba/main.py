@@ -57,10 +57,10 @@ class Dialog(QDialog, dialog):
             self.listWidget.setMinimumWidth(recW.width())
             print(f"contenido de recibido {recW.label_2.text()}")
 
-        if str(sendW.label_2.text()) == "como":
+        if str(sendW.label_2.text()) == "xd":
             print("texto recibido")
             recW = recWidget()
-            text = "Pito jajajajaja "
+            text = " jajajajaja "
             recW.label_2.setText(str(text))
             recW.label_2.text()
             item = QListWidgetItem()
