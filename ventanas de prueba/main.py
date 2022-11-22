@@ -56,6 +56,19 @@ class Dialog(QDialog, dialog):
             self.listWidget.setItemWidget(item, recW)
             self.listWidget.setMinimumWidth(recW.width())
             print(f"contenido de recibido {recW.label_2.text()}")
+
+        if str(sendW.label_2.text()) == "como":
+            print("texto recibido")
+            recW = recWidget()
+            text = "Pito jajajajaja "
+            recW.label_2.setText(str(text))
+            recW.label_2.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_2.text()}")
         else:
             print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
             print("texto recibido")
