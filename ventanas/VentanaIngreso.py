@@ -151,20 +151,7 @@ class Ui_VentanaIngreso(object):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
-    '''def verificacion(self):
-        emailTxt = self.input_Email.text()
-        passwordTxt = self.input_Password.text()
 
-
-        if emailTxt == "root" and passwordTxt == "1234":
-
-            VentanaIngreso.close()
-            self.abrir_Estudiante()
-            print("correcto")
-
-        else:
-            from tkinter import messagebox
-            messagebox.showerror(message="Contraseña incorrecta", title="Contraseña:Mensaje")'''
     def retranslateUi(self, VentanaIngreso):
         _translate = QtCore.QCoreApplication.translate
         VentanaIngreso.setWindowTitle(_translate("VentanaIngreso", "MainWindow"))

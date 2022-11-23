@@ -110,25 +110,7 @@ class Dialog(QDialog, dialog):
         print(f"contenido de recibido {recW.label_2.text()}")
 
 
-'''class serverThread(Thread):
-    def __init__(self, widow):
-        Thread.__init__(self)
-        self.window = widow
-    def run(self):
 
-        sock = socket.socket()
-        host = "localhost"
-        port = 8000
-        sock.bind((host, port))
-        print('conexion exitosa')
-        sock.listen(5)
-        global conn
-        (conn,(ip,port)) = sock.accept()
-        print('Connected to: ' + str(ip) + ':' + str(port))
-        while True:
-            message = conn.recv(1024)
-            clearM = message.decode('utf-8')
-            self.window.reclineEdit.setText(str(clearM))'''
 def main():
     from sys import argv
     app = QApplication(argv)
