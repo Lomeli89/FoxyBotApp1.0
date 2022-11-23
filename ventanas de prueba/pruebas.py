@@ -74,7 +74,7 @@ while True:
             continuacion = resto.split('.')
             dominio = continuacion[0]
             terminacion = continuacion[1]
-            for x in usuario:
+            for x in usuario:33
                 if x in signos or x in numeros or x in minusculas or x in mayusculas:
                     if dominio in dominios:
                         if terminacion in extensiones:
