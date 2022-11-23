@@ -31,22 +31,17 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit{
+	font: 11pt &quot;Calibri&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	
-	background-color: rgb(217, 217, 217);
-	padding-top:1px;
-	border-radius:15px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
     </property>
     <property name="maxLength">
      <number>70</number>
     </property>
     <property name="placeholderText">
-     <string>Email</string>
+     <string>control@loscabos.tecnm.mx</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="input_Password">
@@ -178,6 +173,28 @@ background-color: rgb(217, 217, 217);</string>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo_tec">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../Downloads/LOGO_TECNM_AZUL-1024x437.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
    <zorder>label</zorder>
    <zorder>input_Email</zorder>
@@ -186,6 +203,7 @@ background-color: rgb(217, 217, 217);</string>
    <zorder>btn_irRegistrate</zorder>
    <zorder>label_eresNuevo</zorder>
    <zorder>btn_PruebaFoxyBot</zorder>
+   <zorder>logo_tec</zorder>
   </widget>
  </widget>
  <resources/>
