@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from ventanas.vrfCorreoPass import verificadorCorreo
 
 class Ui_VentanaRegistro(object):
     def setupUi(self, VentanaRegistro):
@@ -113,6 +113,11 @@ class Ui_VentanaRegistro(object):
         #################################################
         self.btn_Registrarme.clicked.connect(VentanaRegistro.close)
         self.btn_Registrarme.clicked.connect(self.abrir_Ingreso)
+        self.btn_Registrarme.clicked.connect(self.registrarCorreo)
+
+
+    def registrarCorreo(self):
+        correo = self.input_Email_Reg.setText(str(self.input_Email_Reg.text()))
 
     def abrir_Ingreso(self):
         self.ventana = QtWidgets.QMainWindow()
