@@ -1,12 +1,15 @@
 
+
 from typing import Tuple
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 
 
+
 class Ui_VentanaIngreso(object):
     def setupUi(self, VentanaIngreso):
+        self.resizeEvent()
         VentanaIngreso.setObjectName("VentanaIngreso")
         VentanaIngreso.resize(800, 600)
         VentanaIngreso.setAutoFillBackground(False)
@@ -98,6 +101,10 @@ class Ui_VentanaIngreso(object):
         self.btn_iniciarSesion.clicked.connect(self.vfnIngreso)
         #self.btn_iniciarSesion.clicked.connect(VentanaIngreso.close)
 
+
+        #size grid
+
+
     def senDatos(self):
         print("datos")
 
@@ -162,6 +169,10 @@ class Ui_VentanaIngreso(object):
         self.label_eresNuevo.setText(_translate("VentanaIngreso", "¿Eres nuevo?"))
         self.btn_PruebaFoxyBot.setText(_translate("VentanaIngreso", "¡PRUEBA A FOXY BOT!"))
 
+    def resizeEvent(self, event):
+        # Update Size Grips
+        from modules.resizeApp import UIFunctions
+        UIFunctions.resize_grips(self)
 
 if __name__ == "__main__":
     import sys

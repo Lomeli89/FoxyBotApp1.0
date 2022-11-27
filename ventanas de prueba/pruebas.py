@@ -67,14 +67,14 @@ while True:
         print("Registro")
         temp_line_email = str(input("Email -> "))
 
-        if temp_index_email.find('@'):
+        if temp_index_email.count('@'):
             nuevo_email = temp_index_email.split('@')
             usuario = nuevo_email[0]
             resto = nuevo_email[1]
             continuacion = resto.split('.')
             dominio = continuacion[0]
             terminacion = continuacion[1]
-            for x in usuario:33
+            for x in usuario:
                 if x in signos or x in numeros or x in minusculas or x in mayusculas:
                     if dominio in dominios:
                         if terminacion in extensiones:
