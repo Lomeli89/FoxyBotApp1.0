@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>788</width>
     <height>600</height>
    </rect>
   </property>
@@ -20,21 +20,24 @@
    <widget class="QLabel" name="label_Nombre">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>310</x>
       <y>250</y>
-      <width>47</width>
-      <height>13</height>
+      <width>51</width>
+      <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;</string>
+    </property>
     <property name="text">
-     <string>Nombre</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#636363;&quot;&gt;Nombre&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_irIniciarSesion">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>490</y>
+      <x>470</x>
+      <y>480</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -51,6 +54,9 @@ font: 75 11pt &quot;Calibri&quot;;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="input_Email_Reg">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -62,40 +68,39 @@ font: 75 11pt &quot;Calibri&quot;;</string>
     <property name="styleSheet">
      <string notr="true">QLineEdit{
 	
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	background-color: rgb(217, 217, 217);
-	padding-top:1px;
-	border-radius:15px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_Registrarme">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>450</y>
-      <width>121</width>
-      <height>23</height>
+      <x>350</x>
+      <y>440</y>
+      <width>161</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:10px;
-font: 10pt &quot;Nirmala UI&quot;;
+     <string notr="true">border-radius:15px;
+font: 12pt &quot;MS Sans Serif&quot;;
 color: rgb(255, 255, 255);
 background-color: rgb(1, 45, 108);</string>
     </property>
     <property name="text">
-     <string>Registrarme</string>
+     <string>REGISTRAR</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="input_Password_Reg">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -107,14 +112,10 @@ background-color: rgb(1, 45, 108);</string>
     <property name="styleSheet">
      <string notr="true">QLineEdit{
 	
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	background-color: rgb(217, 217, 217);
-	padding-top:1px;
-	border-radius:15px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
     </property>
     <property name="echoMode">
@@ -124,17 +125,71 @@ background-color: rgb(1, 45, 108);</string>
    <widget class="QLabel" name="label_YaTienesCuenta">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>490</y>
-      <width>91</width>
+      <x>310</x>
+      <y>480</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Sans Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; color:#5b5b5b;&quot;&gt;¿Ya tienes cuenta?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Email_Reg">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>310</y>
+      <width>131</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>¿Ya tienes cuenta?</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#636363;&quot;&gt;CORREO ELECTRÓNICO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="input_Nombre_Reg">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>60</y>
+      <width>451</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/title.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Email_Reg_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>370</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#636363;&quot;&gt;CONTRASEÑA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_Nombre_Reg_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -146,60 +201,11 @@ background-color: rgb(1, 45, 108);</string>
     <property name="styleSheet">
      <string notr="true">QLineEdit{
 	
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	background-color: rgb(217, 217, 217);
-	padding-top:1px;
-	border-radius:15px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Email_Reg">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>310</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>E-mail</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Password_Reg">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>370</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Contraseña</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>0</y>
-      <width>451</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../../Downloads/title.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <zorder>label</zorder>
@@ -209,9 +215,9 @@ background-color: rgb(1, 45, 108);</string>
    <zorder>btn_Registrarme</zorder>
    <zorder>input_Password_Reg</zorder>
    <zorder>label_YaTienesCuenta</zorder>
-   <zorder>input_Nombre_Reg</zorder>
    <zorder>label_Email_Reg</zorder>
-   <zorder>label_Password_Reg</zorder>
+   <zorder>label_Email_Reg_2</zorder>
+   <zorder>input_Nombre_Reg_2</zorder>
   </widget>
  </widget>
  <resources/>
