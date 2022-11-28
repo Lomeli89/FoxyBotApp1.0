@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
-from recibeWidget import  Widget as recWidget
-from sendWidget import Widget as senWidget
+from PyQt5.QtWidgets import QListWidgetItem
+from windows.recibeWidget import  Widget as recWidget
+from windows.sendWidget import Widget as senWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 text_temp = str("2")
@@ -322,41 +322,41 @@ class Ui_VentanaVisitante(object):
         if str(sendW.label_2.text()) == "1+1":
             print("texto recibido")
             recW = recWidget()
-            text = text_temp
-            recW.label_2.setText(str(text))
-            recW.label_2.text()
+            text3 = text_temp
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, recW)
             self.listWidget.setMinimumWidth(recW.width())
-            print(f"contenido de recibido {recW.label_2.text()}")
+            print(f"contenido de recibido {recW.label_4.text()}")
 
         if str(sendW.label_2.text()) == "xd":
             print("texto recibido")
             recW = recWidget()
-            text = " jajajajaja "
-            recW.label_2.setText(str(text))
-            recW.label_2.text()
+            text3 = " jajajajaja "
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, recW)
             self.listWidget.setMinimumWidth(recW.width())
-            print(f"contenido de recibido {recW.label_2.text()}")
+            print(f"contenido de recibido {recW.label_4.text()}")
         else:
             print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
             print("texto recibido")
             recW = recWidget()
-            text = text_temp2
-            recW.label_2.setText(str(text))
-            recW.label_2.text()
+            text3 = text_temp2
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, recW)
             self.listWidget.setMinimumWidth(recW.width())
-            print(f"contenido de recibido {recW.label_2.text()}")
+            print(f"contenido de recibido {recW.label_4.text()}")
 
     def recMessage(self, text):
         print("------------incio funcion 2-----------")
@@ -372,14 +372,14 @@ class Ui_VentanaVisitante(object):
         print("texto recibido")
         recW = recWidget()
         text = "Hola Bienvenido, soy FoxyBot, estoy para ayudarte con tus dudas acerca del area de control escolar."
-        recW.label_2.setText(str(text))
-        recW.label_2.text()
+        recW.label_4.setText(str(text))
+        recW.label_4.text()
         item = QListWidgetItem()
         item.setSizeHint(recW.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item, recW)
         self.listWidget.setMinimumWidth(recW.width())
-        print(f"contenido de recibido {recW.label_2.text()}")
+        print(f"contenido de recibido {recW.label_4.text()}")
 
     def retranslateUi(self, VentanaVisitante):
         _translate = QtCore.QCoreApplication.translate

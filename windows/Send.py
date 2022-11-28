@@ -9,15 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QLabel
 
 
 class Ui_Form(object):
-    label_2: QLabel
-
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(400, 106)
+        Form.setStyleSheet("background-color: rgb(217, 217, 217);")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(Form)
@@ -47,7 +45,11 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
         self.label_2.setSizePolicy(sizePolicy)
-        self.label_2.setStyleSheet("font: 12pt \"Calibri\";")
+        self.label_2.setStyleSheet("font: 12pt \"MS Sans Serif\";\n"
+"color: rgb(255, 255, 255);\n"
+"    border: 2px solid rgb(158, 158, 158);\n"
+"    border-radius: 15px;\n"
+"background-color: rgb(45, 45, 45);")
         self.label_2.setText("")
         self.label_2.setWordWrap(True)
         self.label_2.setObjectName("label_2")
@@ -62,8 +64,10 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
+        self.label.setMaximumSize(QtCore.QSize(60, 60))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../img/icoUser.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("../img/ico333.jpg"))
+        self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)

@@ -207,6 +207,9 @@ background-color: rgb(1, 45, 108);</string>
 	
 }</string>
     </property>
+    <property name="maxLength">
+     <number>90</number>
+    </property>
    </widget>
    <zorder>label</zorder>
    <zorder>label_Nombre</zorder>

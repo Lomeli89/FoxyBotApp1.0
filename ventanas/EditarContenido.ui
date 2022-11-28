@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>agregarContenido</class>
- <widget class="QDialog" name="agregarContenido">
+ <class>WindowEditarContenido</class>
+ <widget class="QDialog" name="WindowEditarContenido">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>514</width>
-    <height>469</height>
+    <height>481</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>514</width>
+    <height>481</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>514</width>
+    <height>481</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Editar Contenido</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/298809902_539628011298194_5839572564237821349_n.png</normaloff>../img/298809902_539628011298194_5839572564237821349_n.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(217, 217, 217);</string>
@@ -21,9 +37,12 @@
     <rect>
      <x>40</x>
      <y>20</y>
-     <width>141</width>
+     <width>201</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
    </property>
    <property name="text">
     <string>TÍTULO DE LA SOLUCIÓN:</string>
@@ -31,7 +50,7 @@
   </widget>
   <widget class="QLineEdit" name="lineEdit">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -43,15 +62,11 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	
-	background-color: rgb(179, 179, 179);
-	padding-top:1px;
-	border-radius:20px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
    </property>
    <property name="placeholderText">
@@ -60,7 +75,7 @@
   </widget>
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -72,15 +87,11 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	
-	background-color: rgb(179, 179, 179);
-	padding-top:1px;
-	border-radius:20px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
    </property>
    <property name="placeholderText">
@@ -89,7 +100,7 @@
   </widget>
   <widget class="QLineEdit" name="lineEdit_3">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -101,19 +112,15 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	
-	background-color: rgb(179, 179, 179);
-	padding-top:1px;
-	border-radius:20px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
    </property>
    <property name="text">
-    <string>Describa la solución</string>
+    <string/>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -123,6 +130,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_4">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -133,15 +143,11 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit{
+	background-color: rgb(217, 217, 217);
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
 	
-	
-	
-	
-	background-color: rgb(179, 179, 179);
-	padding-top:1px;
-	border-radius:20px;
-	
-	border-color: rgb(0, 46, 109);
 }</string>
    </property>
    <property name="placeholderText">
@@ -153,9 +159,12 @@
     <rect>
      <x>40</x>
      <y>100</y>
-     <width>141</width>
+     <width>211</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
    </property>
    <property name="text">
     <string>ÁREA DE SERVICIO:</string>
@@ -170,6 +179,9 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
+   </property>
    <property name="text">
     <string>SOLUCIÓN:</string>
    </property>
@@ -179,9 +191,12 @@
     <rect>
      <x>40</x>
      <y>320</y>
-     <width>141</width>
+     <width>191</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
    </property>
    <property name="text">
     <string>PALABRAS CLAVE:</string>
@@ -232,7 +247,7 @@ QPushButton:hover {
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Nuevo_2">
+  <widget class="QPushButton" name="btn_Eliminar">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -280,125 +295,13 @@ QPushButton:hover {
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>60</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	
-	font: 14pt &quot;Calibri&quot;;
-	
-	color: rgb(0, 46, 109);
-	background-color: transparent;
-	border: 0px solid;
-	border-radius:15px;
-}
-QPushButton:hover {
-	background-color: rgb(93, 129, 163);
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>140</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	
-	font: 14pt &quot;Calibri&quot;;
-	
-	color: rgb(0, 46, 109);
-	background-color: transparent;
-	border: 0px solid;
-	border-radius:15px;
-}
-QPushButton:hover {
-	background-color: rgb(93, 129, 163);
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>210</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	
-	font: 14pt &quot;Calibri&quot;;
-	
-	color: rgb(0, 46, 109);
-	background-color: transparent;
-	border: 0px solid;
-	border-radius:15px;
-}
-QPushButton:hover {
-	background-color: rgb(93, 129, 163);
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>360</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	
-	font: 14pt &quot;Calibri&quot;;
-	
-	color: rgb(0, 46, 109);
-	background-color: transparent;
-	border: 0px solid;
-	border-radius:15px;
-}
-QPushButton:hover {
-	background-color: rgb(93, 129, 163);
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>btn_Nuevo_2</sender>
+   <sender>btn_Eliminar</sender>
    <signal>clicked()</signal>
-   <receiver>agregarContenido</receiver>
+   <receiver>WindowEditarContenido</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">

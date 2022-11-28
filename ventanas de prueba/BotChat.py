@@ -1,11 +1,8 @@
-from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
+from PyQt5.QtWidgets import QDialog, QListWidgetItem
 from  ChatChat import Ui_Dialog as dialog
-from recibeWidget import  Widget as recWidget
-from sendWidget import Widget as senWidget
-from threading import Thread
-from _thread import *
-import socket
-import os
+from windows.recibeWidget import  Widget as recWidget
+from windows.sendWidget import Widget as senWidget
+
 
 #conn = None
 

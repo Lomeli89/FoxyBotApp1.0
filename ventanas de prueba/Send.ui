@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(217, 217, 217);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
@@ -71,7 +74,11 @@
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Calibri&quot;;</string>
+              <string notr="true">font: 12pt &quot;MS Sans Serif&quot;;
+color: rgb(255, 255, 255);
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
+background-color: rgb(45, 45, 45);</string>
              </property>
              <property name="text">
               <string/>
@@ -96,11 +103,20 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>../img/icoUser.jpg</pixmap>
+           <pixmap>../img/ico333.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
