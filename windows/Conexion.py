@@ -40,8 +40,8 @@ class DataBase:
             cur.execute(sql)
             users = cur.fetchall()
 
-            for user in users:
-                print("id: ", id_usuarios[0])
+            '''for user in users:
+                print("id: ", user[0])
                 print("nombre: ", user[1])
                 print("apellido: ", user[2])
                 print("correo_electronico: ", user[3])
@@ -49,6 +49,7 @@ class DataBase:
                 print("estatus: ", user[5])
                 print("fecha_registro: ", user[6])
                 print("password: ", user[7])
+                print("\n")'''
 
 
     def select_info(self, id_usuarios):
@@ -59,7 +60,7 @@ class DataBase:
             cur.execute(sql)
             user = cur.fetchone()
 
-            print("id: ", id_usuarios[0])
+            print("id: ", user[0])
             print("nombre: ", user[1])
             print("apellido: ", user[2])
             print("correo_electronico: ", user[3])
@@ -72,3 +73,5 @@ class DataBase:
             raise
 
 
+database = DataBase()
+database.select_info()
