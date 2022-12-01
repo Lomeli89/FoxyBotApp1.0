@@ -17,6 +17,7 @@ class DataBase:
         correox = cur.fetchall()
         cur.close()
         return correox
+
     def busca_contra(self, contra):
         cur = self.conexion.cursor()
         sql = "SELECT password FROM usuarios WHERE password ={}".format(contra)

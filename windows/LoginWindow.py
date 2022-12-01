@@ -199,7 +199,7 @@ class Ui_MainWindowLogin(object):
         if self.input_Email.text() == "" or self.input_Password.text() == "":
             self.info_campos_texto()
         else:
-            if dato1[0][0]== temp_entradas_email:
+            if dato1[0][0] == temp_entradas_email:
                 if dato2[0][0] == temp_entradas_pass:
                     MainWindowLogin.close()
                     self.abrir_Estudiante()
