@@ -127,7 +127,7 @@ background-color: rgb(255, 255, 255);</string>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout">
               <item>
-               <widget class="QLineEdit" name="input_Nombre_Reg_2">
+               <widget class="QLineEdit" name="input_Nombre_Reg">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -151,6 +151,41 @@ background-color: rgb(255, 255, 255);</string>
                 </property>
                 <property name="placeholderText">
                  <string>Nombre</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="QLineEdit" name="input_apellido_Reg">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>271</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit{
+	
+	font: 9pt &quot;MS Sans Serif&quot;;
+	border: 2px solid rgb(158, 158, 158);
+	border-radius: 15px;
+	
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="maxLength">
+                 <number>90</number>
+                </property>
+                <property name="placeholderText">
+                 <string>Apellido</string>
                 </property>
                </widget>
               </item>

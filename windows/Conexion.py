@@ -12,18 +12,18 @@ class DataBase:
         print("conexion establecida")
     def busca_user(self, correo_electronico):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
+        sql = "SELECT correo_electronico FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
         cur.execute(sql)
         correox = cur.fetchall()
         cur.close()
         return correox
-    def busca_contra(self, password):
+    def busca_contra(self, contra):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM usuarios WHERE password ={}".format(password)
+        sql = "SELECT password FROM usuarios WHERE password ={}".format(contra)
         cur.execute(sql)
-        passwordx = cur.fetchall()
+        contrax = cur.fetchall()
         cur.close()
-        return passwordx
+        return contrax
 
     def busca_id_usuario(self, id_usuarios):
         cur = self.conexion.cursor()
@@ -32,24 +32,6 @@ class DataBase:
         id_usuariodx = cur.fetchall()
         cur.close()
         return id_usuariodx
-
-    def select_all_users(self):
-        sql = 'SELECT id_usuarios, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, fecha_registro, password FROM usuarios'
-        try:
-            cur = self.conexion.cursor()
-            cur.execute(sql)
-            users = cur.fetchall()
-
-            '''for user in users:
-                print("id: ", user[0])
-                print("nombre: ", user[1])
-                print("apellido: ", user[2])
-                print("correo_electronico: ", user[3])
-                print("id_tipo_usuario: ", user[4])
-                print("estatus: ", user[5])
-                print("fecha_registro: ", user[6])
-                print("password: ", user[7])
-                print("\n")'''
 
 
     def select_info(self, id_usuarios):
@@ -73,5 +55,3 @@ class DataBase:
             raise
 
 
-database = DataBase()
-database.select_info()
