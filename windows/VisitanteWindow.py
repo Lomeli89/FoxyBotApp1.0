@@ -439,7 +439,7 @@ class Ui_MainWindowVisitante(object):
             self.listWidget.setMinimumWidth(recW.width())
             print(f"contenido de recibido {recW.label_4.text()}")
 
-        if str(sendW.label_2.text()) == "xd":
+        elif str(sendW.label_2.text()) == "xd":
             print("texto recibido")
             recW = recWidget()
             text3 = " jajajajaja "

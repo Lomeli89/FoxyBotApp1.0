@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
 from recibeWidget import  Widget as recWidget
 from sendWidget import Widget as senWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
-text_temp = str("2")
+text_temp = str("Hola bro")
 text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
 text = str
 
@@ -423,11 +423,11 @@ class Ui_MainWindowEstudiante(object):
         self.lineEdit.setText('')
         print("campo de texto limpio")
         # respuesta hola >> hi
-        if str(sendW.label_2.text()) == "1+1":
+        if str(sendW.label_2.text()) == "Hola" or "hola" or "ola":
             print("texto recibido")
             recW = recWidget()
-            text3 = text_temp
-            recW.label_4.setText(str(text3))
+            text = text_temp
+            recW.label_4.setText(str(text))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
@@ -436,11 +436,11 @@ class Ui_MainWindowEstudiante(object):
             self.listWidget.setMinimumWidth(recW.width())
             print(f"contenido de recibido {recW.label_4.text()}")
 
-        if str(sendW.label_2.text()) == "xd":
+        elif str(sendW.label_2.text()) == "xd":
             print("texto recibido")
             recW = recWidget()
-            text3 = " jajajajaja "
-            recW.label_4.setText(str(text3))
+            text = " jajajajaja "
+            recW.label_4.setText(str(text))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
@@ -452,8 +452,8 @@ class Ui_MainWindowEstudiante(object):
             print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
             print("texto recibido")
             recW = recWidget()
-            text3 = text_temp2
-            recW.label_4.setText(str(text3))
+            text = text_temp2
+            recW.label_4.setText(str(text))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())

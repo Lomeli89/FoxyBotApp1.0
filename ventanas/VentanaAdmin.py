@@ -468,6 +468,15 @@ class Ui_VentanaAdmin(object):
         self.btn_about_2.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_8))
         self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))
         self.btn_Nuevo_5.clicked.connect(self.agregarEditor)
+        self.btn_cerrarSesion.clicked.connect(VentanaAdmin.close)
+        self.btn_cerrarSesion.clicked.connect(self.cerrarSesion)
+
+    def cerrarSesion(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from ventanas.VentanaIngreso import Ui_VentanaIngreso
+        self.ui = Ui_VentanaIngreso()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
     def agregarEditor(self):
         self.ventana = QtWidgets.QMainWindow()
         from ventanas.AgregarEditor import Ui_agregarEditor
@@ -499,6 +508,7 @@ class Ui_VentanaAdmin(object):
         self.label_24.setText(_translate("VentanaAdmin", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Gestión de editores</span></p></body></html>"))
         self.btn_Nuevo_5.setText(_translate("VentanaAdmin", "+Nuevo"))
         self.label_25.setText(_translate("VentanaAdmin", "<html><head/><body><p><span style=\" font-size:18pt;\">FOXYBOT v0.1</span></p></body></html>"))
+        self.btn_cerrarSesion.clicked.connect(self.cerrarSesion)
 
 
 if __name__ == "__main__":

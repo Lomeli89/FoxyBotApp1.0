@@ -1,8 +1,6 @@
 
-
 from typing import Tuple
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 
 
@@ -100,10 +98,6 @@ class Ui_VentanaIngreso(object):
         self.btn_iniciarSesion.clicked.connect(self.vfnIngreso)
         #self.btn_iniciarSesion.clicked.connect(VentanaIngreso.close)
 
-
-        #size grid
-
-
     def senDatos(self):
         print("datos")
 
@@ -167,7 +161,6 @@ class Ui_VentanaIngreso(object):
         self.btn_irRegistrate.setText(_translate("VentanaIngreso", "¡Registrate!"))
         self.label_eresNuevo.setText(_translate("VentanaIngreso", "¿Eres nuevo?"))
         self.btn_PruebaFoxyBot.setText(_translate("VentanaIngreso", "¡PRUEBA A FOXY BOT!"))
-
 
 
 if __name__ == "__main__":

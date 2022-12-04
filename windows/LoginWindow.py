@@ -1,6 +1,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import Conexion
+#import bcrypt
+import re
 class Ui_MainWindowLogin(object):
     def setupUi(self, MainWindowLogin, ):
         MainWindowLogin.setObjectName("MainWindowLogin")
@@ -173,52 +175,45 @@ class Ui_MainWindowLogin(object):
 
         ##################eventos###############################
 
-
-
         self.btn_iniciarSesion.clicked.connect(self.inicio)
+
+
     def inicio(self):
 
         self.datos = Conexion.DataBase()
-        blista_email = ""
-        blista_pass = ""
+
 
         temp_entradas_email = self.input_Email.text()
         temp_entradas_pass = self.input_Password.text()
 
-        temp_entradas_email = str("'"+ temp_entradas_email + "'")
-        temp_entradas_pass = str("'"+ temp_entradas_pass + "'")
+        
 
+        temp_entradas_emaill = str("'"+ temp_entradas_email + "'")
+        temp_entradas_passs = str("'"+ temp_entradas_pass + "'")
+        #print(temp_entradas_pass)
+        si1=0
+        si2=0
+        dato1 = self.datos.busca_user(temp_entradas_emaill)
+        dato2 = self.datos.busca_contra(temp_entradas_passs)
+       # print(dato2[0][0])
 
-        dato1 = self.datos.busca_user(temp_entradas_email)
-        dato2 = self.datos.busca_contra(temp_entradas_pass)
+        if dato1[0][0]==temp_entradas_email:
 
-        if dato1 == []:
-            self.abrir_Estudiante()
-            print("hola")
+            if dato2[0][0] == temp_entradas_pass:
 
-        ''' if self.input_Email.text() == "":
-                self.info_campos_texto()
-            elif self.input_Password.text() == "":
-                self.info_campos_texto()
-            elif self.input_Email.text() == "" and self.input_Password.text() == "":
-                self.info_campos_texto()
+                 self.abrir_Estudiante()
+
             else:
-                print("hola")
-                if dato1 == [] and dato2 == []:
-                    print("error")
-                else:
-                    if dato1 == []:
-                        print("error")
-    
-                    else:
-                        dato1 = dato1[0][1]
-                    if dato2 == []:
-                        print("error")
-                    else:
-                        dato2 = dato2[0][2]
-                    if dato1 != [] and dato2 != []:
-                        
-                        self.abrir_Estudiante()'''
+                print("no hay")
+        else:
+            print("no hay2")
+
+
+
+
+
+
+
 
     def vfnIngreso(self):
         varEmail = str
