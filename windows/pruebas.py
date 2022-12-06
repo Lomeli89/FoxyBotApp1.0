@@ -10,19 +10,18 @@ temp_apellido = ""
 temp_correo = ""
 temp_tipo_usuario = 1
 estatus = 0
-temp_fecha_registro = datetime.now()
+temp_fecha_registro = "datetime.now()"
 
 # entradas
 
-temp_nombre = input('nombre ->')
-temp_apellido = input('apellido ->')
-temp_correo = input('correo ->')
 
 
-# conexión
 datos = Conexion.DataBase()
-#asignación de tipo de formato
 
-##### datos a guardar conectados a mysql
+temp_nombre = input('Nombre ->')
 
+temp_nombre_1 = str("'"+ temp_nombre + "'")
+print(temp_nombre_1)
+dato1 = datos.gnombre(temp_nombre)
+##### datos a guardar
 
