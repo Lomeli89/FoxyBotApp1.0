@@ -6,50 +6,50 @@ class DataBase:
             host='localhost',
             user = 'root',
             password = 'angelus',
-            db = 'foxybotdb',)
+            db = 'foxybotdb')
 
         self.cursor = self.conexion.cursor()
         print("conexion establecida")
     def busca_user(self, correo_electronico):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
+        sql = "SELECT usuarios FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
         cur.execute(sql)
         correox = cur.fetchall()
         cur.close()
         return correox
     def busca_contra(self, password):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM usuarios WHERE password ={}".format(password)
+        sql = "SELECT password FROM usuarios WHERE password ={}".format(password)
         cur.execute(sql)
         passwordx = cur.fetchall()
         cur.close()
         return passwordx
-
-    def busca_id_usuario(self, id_usuarios):
+    def guardarDatos(self):
         cur = self.conexion.cursor()
-        sql = 'SELECT * FROM usuarios WHERE id_usuarios ={}'.format(id_usuarios)
-        cur.execute(sql)
-        id_usuariodx = cur.fetchall()
-        cur.close()
-        return id_usuariodx
+        sql = 'INSERT * FROM usuarios WHERE  ={}'.format()
 
-    def select_all_users(self):
-        sql = 'SELECT id_usuarios, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, fecha_registro, password FROM usuarios'
-        try:
-            cur = self.conexion.cursor()
-            cur.execute(sql)
-            users = cur.fetchall()
+#.....................................................Funciones extras
 
-            '''for user in users:
-                print("id: ", user[0])
-                print("nombre: ", user[1])
-                print("apellido: ", user[2])
-                print("correo_electronico: ", user[3])
-                print("id_tipo_usuario: ", user[4])
-                print("estatus: ", user[5])
-                print("fecha_registro: ", user[6])
-                print("password: ", user[7])
-                print("\n")'''
+    def gDatos(self,nombre,apellido,correo_electronico,id_tipo_usuario,estatus,fecha_registro,password):
+        cur = self.conexion.cursor()
+        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`fecha_registro`,`password`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+        cur.execute(sql,(format(nombre),format(apellido),format(correo_electronico),format(id_tipo_usuario),format(estatus),format(fecha_registro),format(password)))
+        self.conexion.commit()
+        print(nombre,apellido,correo_electronico,id_tipo_usuario,estatus,fecha_registro,password)
+
+    #def gapellido(self):
+    #def gcorreo(self):
+    #def gcontra(self):
+
+
+
+
+
+
+
+
+
+
 
 
     def select_info(self, id_usuarios):
@@ -74,4 +74,3 @@ class DataBase:
 
 
 database = DataBase()
-database.select_info()
