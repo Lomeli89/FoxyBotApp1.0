@@ -191,7 +191,7 @@ class Ui_MainWindowRegistro(object):
 
         self.datos = Conexion.DataBase()
 
-        temp_nombre = self.input_Nombre_Reg.text()
+        #temp_nombre = self.input_Nombre_Reg.text()
         temp_apellido = self.input_apellido_Reg.text()
         temp_correo = self.input_Email_Reg.text()
         temp_password = self.input_Password_Reg.text()
@@ -199,11 +199,11 @@ class Ui_MainWindowRegistro(object):
         temp_estatus = 0
         temp_fecha_registro = datetime.now()
 
+        print(temp_nombre,temp_apellido)
 
 
 
-
-        self.datos.gDatos(temp_nombre,temp_apellido,temp_correo,temp_tipo_usuario,temp_estatus,temp_fecha_registro,temp_password)
+        self.datos.gDatos(temp_nombre,temp_apellido)
 
 
 
