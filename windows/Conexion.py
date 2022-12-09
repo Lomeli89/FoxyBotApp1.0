@@ -30,12 +30,12 @@ class DataBase:
 
 #.....................................................Funciones extras
 
-    def gDatos(self,nombre,apellido):
+    def gDatos(self,nombre, apellido, correo_electronico):
         cur = self.conexion.cursor()
-        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`fecha_registro`,`password`) VALUES (%s,%s)"
-        cur.execute(sql,(format(nombre),format(apellido)))
+        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,) VALUES (%s,%s,%s)"
+        cur.execute(sql,(format(nombre),(apellido),(correo_electronico)))
         self.conexion.commit()
-        print(nombre,apellido)
+        print(nombre, apellido,correo_electronico)
 
     #def gapellido(self):
     #def gcorreo(self):
