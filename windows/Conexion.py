@@ -38,10 +38,13 @@ class DataBase:
         self.conexion.commit()
         print(nombre, apellido,correo_electronico,id_tipo_usuario,estatus,password)
 
-    #def gapellido(self):
-    #def gcorreo(self):
-    #def gcontra(self):
-
+    def validacion(self, correo_electronico):
+        cur = self.conexion.cursor()
+        sql = "SELECT usuarios FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
+        cur.execute(sql)
+        correox = cur.fetchall()
+        cur.close()
+        return correox
 
 
 
