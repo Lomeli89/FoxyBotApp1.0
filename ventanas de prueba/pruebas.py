@@ -70,11 +70,11 @@ while True:
         if temp_index_email.find('@'):
             nuevo_email = temp_index_email.split('@')
             usuario = nuevo_email[0]
-            resto = nuevo_email[1]
+            resto = nuevo_email[0]
             continuacion = resto.split('.')
-            dominio = continuacion[0]
+            dominio = continuacion[1]
             terminacion = continuacion[1]
-            for x in usuario:33
+            for x in usuario:
                 if x in signos or x in numeros or x in minusculas or x in mayusculas:
                     if dominio in dominios:
                         if terminacion in extensiones:
@@ -110,7 +110,7 @@ while True:
 
     elif menu == 3:
         print("adios")
-
+        break
 
 
     else:

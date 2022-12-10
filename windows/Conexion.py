@@ -5,7 +5,7 @@ class DataBase:
         self.conexion = pymysql.connect(
             host='localhost',
             user = 'root',
-            password = 'angelus',
+            password = 'angelus'    ,
             db = 'foxybotdb')
 
         self.cursor = self.conexion.cursor()
@@ -30,12 +30,12 @@ class DataBase:
 
 #.....................................................Funciones extras
 
-    def gDatos(self,nombre, apellido, correo_electronico):
+    def gDatos(self,nombre, apellido, correo_electronico,id_tipo_usuario,estatus,password):
         cur = self.conexion.cursor()
-        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,) VALUES (%s,%s,%s)"
-        cur.execute(sql,(format(nombre),(apellido),(correo_electronico)))
+        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`password`) VALUES (%s,%s,%s,%s,%s,%s)"
+        cur.execute(sql,(format(nombre),(apellido),(correo_electronico),(id_tipo_usuario),(estatus),(password)))
         self.conexion.commit()
-        print(nombre, apellido,correo_electronico)
+        print(nombre, apellido,correo_electronico,id_tipo_usuario,estatus,password)
 
     #def gapellido(self):
     #def gcorreo(self):
