@@ -742,6 +742,10 @@ class Ui_MainWindowAdmin(object):
         self.listWidget.setMinimumWidth(recW.width())
         print(f"contenido de recibido {recW.label_4.text()}")
 
+    def nuevoServicio(self):
+
+
+
     def retranslateUi(self, MainWindowAdmin):
         _translate = QtCore.QCoreApplication.translate
         MainWindowAdmin.setWindowTitle(_translate("MainWindowAdmin", "Admin"))
