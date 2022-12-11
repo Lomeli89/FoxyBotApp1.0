@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
-from recibeWidget import  Widget as recWidget
+from recibeWidget import Widget as recWidget
 from sendWidget import Widget as senWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 text_temp = str("2")
 text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
 text = str
@@ -17,7 +18,8 @@ class Ui_MainWindowAdmin(object):
         sizePolicy.setHeightForWidth(MainWindowAdmin.sizePolicy().hasHeightForWidth())
         MainWindowAdmin.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../.designer/img/298809902_539628011298194_5839572564237821349_n.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../../../.designer/img/298809902_539628011298194_5839572564237821349_n.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindowAdmin.setWindowIcon(icon)
         MainWindowAdmin.setStyleSheet("background-color: rgb(45, 45, 45);")
         self.centralwidget = QtWidgets.QWidget(MainWindowAdmin)
@@ -93,7 +95,7 @@ class Ui_MainWindowAdmin(object):
         self.label_user_2 = QtWidgets.QLabel(self.frame_3)
         self.label_user_2.setMaximumSize(QtCore.QSize(50, 50))
         self.label_user_2.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 11.5pt \"Calibri\";")
+                                        "font: 11.5pt \"Calibri\";")
         self.label_user_2.setText("")
         self.label_user_2.setPixmap(QtGui.QPixmap("../img/ico.png"))
         self.label_user_2.setScaledContents(True)
@@ -110,13 +112,13 @@ class Ui_MainWindowAdmin(object):
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.label_user = QtWidgets.QLabel(self.frame_5)
         self.label_user.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 11.5pt \"Calibri\";")
+                                      "font: 11.5pt \"Calibri\";")
         self.label_user.setObjectName("label_user")
         self.verticalLayout_8.addWidget(self.label_user)
         self.label_estudiante = QtWidgets.QLabel(self.frame_5)
         self.label_estudiante.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 25 11pt \"Calibri Light\";\n"
-"background-color: transparent;")
+                                            "font: 25 11pt \"Calibri Light\";\n"
+                                            "background-color: transparent;")
         self.label_estudiante.setObjectName("label_estudiante")
         self.verticalLayout_8.addWidget(self.label_estudiante)
         self.horizontalLayout_3.addWidget(self.frame_5)
@@ -132,25 +134,25 @@ class Ui_MainWindowAdmin(object):
         self.btn_chat.setMaximumSize(QtCore.QSize(171, 30))
         self.btn_chat.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_chat.setStyleSheet("QPushButton {\n"
-"    \n"
-"    \n"
-"    font: 75 11.5pt \"SansSerif\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:-90px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                    "    \n"
+                                    "    \n"
+                                    "    font: 75 11.5pt \"SansSerif\";\n"
+                                    "    color: rgb(255, 255, 255);\n"
+                                    "    padding-left:-90px;\n"
+                                    "    background-color: rgb(0, 46, 109);\n"
+                                    "    border: 0px solid;\n"
+                                    "    border-radius:15px;\n"
+                                    "}\n"
+                                    "QPushButton:hover {\n"
+                                    "    background-color: rgb(93, 129, 163);\n"
+                                    "}\n"
+                                    "\n"
+                                    "\n"
+                                    "    \n"
+                                    "    \n"
+                                    "    \n"
+                                    "    \n"
+                                    "")
         self.btn_chat.setFlat(False)
         self.btn_chat.setObjectName("btn_chat")
         self.verticalLayout_3.addWidget(self.btn_chat)
@@ -159,23 +161,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_servicios.setMaximumSize(QtCore.QSize(171, 30))
         self.btn_servicios.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_servicios.setStyleSheet("QPushButton {\n"
-"    font: 75 11.5pt \"SansSerif\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:10px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                         "    font: 75 11.5pt \"SansSerif\";\n"
+                                         "    color: rgb(255, 255, 255);\n"
+                                         "    padding-left:10px;\n"
+                                         "    background-color: rgb(0, 46, 109);\n"
+                                         "    border: 0px solid;\n"
+                                         "    border-radius:15px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "    background-color: rgb(93, 129, 163);\n"
+                                         "}\n"
+                                         "\n"
+                                         "\n"
+                                         "    \n"
+                                         "    \n"
+                                         "    \n"
+                                         "    \n"
+                                         "")
         self.btn_servicios.setFlat(False)
         self.btn_servicios.setObjectName("btn_servicios")
         self.verticalLayout_3.addWidget(self.btn_servicios)
@@ -184,23 +186,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_editores.setMaximumSize(QtCore.QSize(171, 30))
         self.btn_editores.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_editores.setStyleSheet("QPushButton {\n"
-"    font: 75 11.5pt \"SansSerif\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:2px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                        "    font: 75 11.5pt \"SansSerif\";\n"
+                                        "    color: rgb(255, 255, 255);\n"
+                                        "    padding-left:2px;\n"
+                                        "    background-color: rgb(0, 46, 109);\n"
+                                        "    border: 0px solid;\n"
+                                        "    border-radius:15px;\n"
+                                        "}\n"
+                                        "QPushButton:hover {\n"
+                                        "    background-color: rgb(93, 129, 163);\n"
+                                        "}\n"
+                                        "\n"
+                                        "\n"
+                                        "    \n"
+                                        "    \n"
+                                        "    \n"
+                                        "    \n"
+                                        "")
         self.btn_editores.setFlat(False)
         self.btn_editores.setObjectName("btn_editores")
         self.verticalLayout_3.addWidget(self.btn_editores)
@@ -209,23 +211,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_about.setMaximumSize(QtCore.QSize(171, 30))
         self.btn_about.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_about.setStyleSheet("QPushButton {\n"
-"    font: 75 11.5pt \"SansSerif\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:-20px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                     "    font: 75 11.5pt \"SansSerif\";\n"
+                                     "    color: rgb(255, 255, 255);\n"
+                                     "    padding-left:-20px;\n"
+                                     "    background-color: rgb(0, 46, 109);\n"
+                                     "    border: 0px solid;\n"
+                                     "    border-radius:15px;\n"
+                                     "}\n"
+                                     "QPushButton:hover {\n"
+                                     "    background-color: rgb(93, 129, 163);\n"
+                                     "}\n"
+                                     "\n"
+                                     "\n"
+                                     "    \n"
+                                     "    \n"
+                                     "    \n"
+                                     "    \n"
+                                     "")
         self.btn_about.setFlat(False)
         self.btn_about.setObjectName("btn_about")
         self.verticalLayout_3.addWidget(self.btn_about)
@@ -239,23 +241,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_cerrarSesion.setMaximumSize(QtCore.QSize(171, 30))
         self.btn_cerrarSesion.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_cerrarSesion.setStyleSheet("QPushButton {\n"
-"    font: 75 11.5pt \"SansSerif\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    padding-left:-29px;\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                            "    font: 75 11.5pt \"SansSerif\";\n"
+                                            "    color: rgb(255, 255, 255);\n"
+                                            "    padding-left:-29px;\n"
+                                            "    background-color: rgb(0, 46, 109);\n"
+                                            "    border: 0px solid;\n"
+                                            "    border-radius:15px;\n"
+                                            "}\n"
+                                            "QPushButton:hover {\n"
+                                            "    background-color: rgb(93, 129, 163);\n"
+                                            "}\n"
+                                            "\n"
+                                            "\n"
+                                            "    \n"
+                                            "    \n"
+                                            "    \n"
+                                            "    \n"
+                                            "")
         self.btn_cerrarSesion.setFlat(False)
         self.btn_cerrarSesion.setObjectName("btn_cerrarSesion")
         self.verticalLayout_3.addWidget(self.btn_cerrarSesion)
@@ -273,10 +275,10 @@ class Ui_MainWindowAdmin(object):
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.stackedWidget = QtWidgets.QStackedWidget(self.frame_8)
         self.stackedWidget.setStyleSheet("QFrame{\n"
-"    background-color: rgb(217, 217, 217);\n"
-"    \n"
-"\n"
-"}")
+                                         "    background-color: rgb(217, 217, 217);\n"
+                                         "    \n"
+                                         "\n"
+                                         "}")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_chat = QtWidgets.QWidget()
         self.page_chat.setObjectName("page_chat")
@@ -296,9 +298,9 @@ class Ui_MainWindowAdmin(object):
         sizePolicy.setHeightForWidth(self.frame_11.sizePolicy().hasHeightForWidth())
         self.frame_11.setSizePolicy(sizePolicy)
         self.frame_11.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"border-bottom-left-radius : 5px;\n"
-"border-bottom-right-radius : 5px\n"
-"")
+                                    "border-bottom-left-radius : 5px;\n"
+                                    "border-bottom-right-radius : 5px\n"
+                                    "")
         self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_11.setObjectName("frame_11")
@@ -306,8 +308,8 @@ class Ui_MainWindowAdmin(object):
         self.verticalLayout_12.setObjectName("verticalLayout_12")
         self.label = QtWidgets.QLabel(self.frame_11)
         self.label.setStyleSheet("margin-left: 10px; \n"
-"font: 9pt \"MS Sans Serif\";\n"
-"background-color: rgb(45, 45, 45);")
+                                 "font: 9pt \"MS Sans Serif\";\n"
+                                 "background-color: rgb(45, 45, 45);")
         self.label.setObjectName("label")
         self.verticalLayout_12.addWidget(self.label)
         self.verticalLayout_4.addWidget(self.frame_11)
@@ -360,12 +362,12 @@ class Ui_MainWindowAdmin(object):
         self.lineEdit = QtWidgets.QLineEdit(self.frame_10)
         self.lineEdit.setMaximumSize(QtCore.QSize(560, 35))
         self.lineEdit.setStyleSheet("QLineEdit{\n"
-"    background-color: rgb(217, 217, 217);\n"
-"    font: 9pt \"MS Sans Serif\";\n"
-"    border: 2px solid rgb(158, 158, 158);\n"
-"    border-radius: 15px;\n"
-"    \n"
-"}")
+                                    "    background-color: rgb(217, 217, 217);\n"
+                                    "    font: 9pt \"MS Sans Serif\";\n"
+                                    "    border: 2px solid rgb(158, 158, 158);\n"
+                                    "    border-radius: 15px;\n"
+                                    "    \n"
+                                    "}")
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout_9.addWidget(self.lineEdit)
         self.btn_enviar = QtWidgets.QPushButton(self.frame_10)
@@ -376,18 +378,18 @@ class Ui_MainWindowAdmin(object):
         self.btn_enviar.setSizePolicy(sizePolicy)
         self.btn_enviar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_enviar.setStyleSheet("QPushButton {\n"
-"    \n"
-"    \n"
-"    background-color:transparent;\n"
-"font: 9pt \"MS Sans Serif\";\n"
-"\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(250, 250, 250);\n"
-"}\n"
-"\n"
-"\n"
-"")
+                                      "    \n"
+                                      "    \n"
+                                      "    background-color:transparent;\n"
+                                      "font: 9pt \"MS Sans Serif\";\n"
+                                      "\n"
+                                      "}\n"
+                                      "QPushButton:hover {\n"
+                                      "    background-color: rgb(250, 250, 250);\n"
+                                      "}\n"
+                                      "\n"
+                                      "\n"
+                                      "")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../../../.designer/img/botonSend.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_enviar.setIcon(icon1)
@@ -425,24 +427,24 @@ class Ui_MainWindowAdmin(object):
         self.btn_eliminar.setMaximumSize(QtCore.QSize(100, 16777215))
         self.btn_eliminar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_eliminar.setStyleSheet("QPushButton {\n"
-"    \n"
-"    font: 14pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    \n"
-"    background-color: rgb(255, 0, 0);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                        "    \n"
+                                        "    font: 14pt \"Calibri\";\n"
+                                        "    color: rgb(255, 255, 255);\n"
+                                        "    \n"
+                                        "    background-color: rgb(255, 0, 0);\n"
+                                        "    border: 0px solid;\n"
+                                        "    border-radius:15px;\n"
+                                        "}\n"
+                                        "QPushButton:hover {\n"
+                                        "    background-color: rgb(93, 129, 163);\n"
+                                        "}\n"
+                                        "\n"
+                                        "\n"
+                                        "    \n"
+                                        "    \n"
+                                        "    \n"
+                                        "    \n"
+                                        "")
         self.btn_eliminar.setFlat(False)
         self.btn_eliminar.setObjectName("btn_eliminar")
         self.horizontalLayout_7.addWidget(self.btn_eliminar)
@@ -456,23 +458,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_Nuevo.setMaximumSize(QtCore.QSize(100, 16777215))
         self.btn_Nuevo.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_Nuevo.setStyleSheet("QPushButton {\n"
-"    \n"
-"    font: 14pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                     "    \n"
+                                     "    font: 14pt \"Calibri\";\n"
+                                     "    color: rgb(255, 255, 255);\n"
+                                     "    background-color: rgb(0, 46, 109);\n"
+                                     "    border: 0px solid;\n"
+                                     "    border-radius:15px;\n"
+                                     "}\n"
+                                     "QPushButton:hover {\n"
+                                     "    background-color: rgb(93, 129, 163);\n"
+                                     "}\n"
+                                     "\n"
+                                     "\n"
+                                     "    \n"
+                                     "    \n"
+                                     "    \n"
+                                     "    \n"
+                                     "")
         self.btn_Nuevo.setFlat(False)
         self.btn_Nuevo.setObjectName("btn_Nuevo")
         self.horizontalLayout_7.addWidget(self.btn_Nuevo)
@@ -486,7 +488,7 @@ class Ui_MainWindowAdmin(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignVCenter)
         self.tableWidget.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, item)
@@ -525,24 +527,24 @@ class Ui_MainWindowAdmin(object):
         self.btn_eliminar_3.setMaximumSize(QtCore.QSize(100, 16777215))
         self.btn_eliminar_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_eliminar_3.setStyleSheet("QPushButton {\n"
-"    \n"
-"    font: 14pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    \n"
-"    background-color: rgb(255, 0, 0);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                          "    \n"
+                                          "    font: 14pt \"Calibri\";\n"
+                                          "    color: rgb(255, 255, 255);\n"
+                                          "    \n"
+                                          "    background-color: rgb(255, 0, 0);\n"
+                                          "    border: 0px solid;\n"
+                                          "    border-radius:15px;\n"
+                                          "}\n"
+                                          "QPushButton:hover {\n"
+                                          "    background-color: rgb(93, 129, 163);\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "    \n"
+                                          "    \n"
+                                          "    \n"
+                                          "    \n"
+                                          "")
         self.btn_eliminar_3.setFlat(False)
         self.btn_eliminar_3.setObjectName("btn_eliminar_3")
         self.horizontalLayout_17.addWidget(self.btn_eliminar_3)
@@ -556,23 +558,23 @@ class Ui_MainWindowAdmin(object):
         self.btn_Nuevo_3.setMaximumSize(QtCore.QSize(100, 16777215))
         self.btn_Nuevo_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_Nuevo_3.setStyleSheet("QPushButton {\n"
-"    \n"
-"    font: 14pt \"Calibri\";\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(0, 46, 109);\n"
-"    border: 0px solid;\n"
-"    border-radius:15px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(93, 129, 163);\n"
-"}\n"
-"\n"
-"\n"
-"    \n"
-"    \n"
-"    \n"
-"    \n"
-"")
+                                       "    \n"
+                                       "    font: 14pt \"Calibri\";\n"
+                                       "    color: rgb(255, 255, 255);\n"
+                                       "    background-color: rgb(0, 46, 109);\n"
+                                       "    border: 0px solid;\n"
+                                       "    border-radius:15px;\n"
+                                       "}\n"
+                                       "QPushButton:hover {\n"
+                                       "    background-color: rgb(93, 129, 163);\n"
+                                       "}\n"
+                                       "\n"
+                                       "\n"
+                                       "    \n"
+                                       "    \n"
+                                       "    \n"
+                                       "    \n"
+                                       "")
         self.btn_Nuevo_3.setFlat(False)
         self.btn_Nuevo_3.setObjectName("btn_Nuevo_3")
         self.horizontalLayout_17.addWidget(self.btn_Nuevo_3)
@@ -586,7 +588,7 @@ class Ui_MainWindowAdmin(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_3.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignVCenter)
+        item.setTextAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignVCenter)
         self.tableWidget_3.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_3.setHorizontalHeaderItem(3, item)
@@ -613,7 +615,7 @@ class Ui_MainWindowAdmin(object):
         self.verticalLayout_15.addWidget(self.frame_15)
         self.label_2 = QtWidgets.QLabel(self.frame_12)
         self.label_2.setStyleSheet("font: 75 35pt \"MS Sans Serif\";\n"
-"color: rgb(167, 182, 203);")
+                                   "color: rgb(167, 182, 203);")
         self.label_2.setObjectName("label_2")
         self.verticalLayout_15.addWidget(self.label_2)
         self.frame_14 = QtWidgets.QFrame(self.frame_12)
@@ -662,9 +664,7 @@ class Ui_MainWindowAdmin(object):
         self.btn_cerrarSesion.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(MainWindowAdmin.close()))
 
         self.btn_enviar.clicked.connect(self.sendMessage)
-        self.btn_Nuevoclicked.connect(self.nuevoServicio)
-
-
+        self.btn_Nuevo.clicked.connect(self.nuevoServicio)
 
     def sendMessage(self):
         sendW = senWidget()
@@ -745,16 +745,12 @@ class Ui_MainWindowAdmin(object):
         self.listWidget.setMinimumWidth(recW.width())
         print(f"contenido de recibido {recW.label_4.text()}")
 
-
-
     def nuevoServicio(self):
         self.ventana = QtWidgets.QMainWindow()
         from windows.AgregarContenido import Ui_agregarContenido
         self.ui = Ui_agregarContenido()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
-
-
 
     def retranslateUi(self, MainWindowAdmin):
         _translate = QtCore.QCoreApplication.translate
@@ -766,10 +762,12 @@ class Ui_MainWindowAdmin(object):
         self.btn_editores.setText(_translate("MainWindowAdmin", "Gestión de editores"))
         self.btn_about.setText(_translate("MainWindowAdmin", "Sobre Foxy Bot"))
         self.btn_cerrarSesion.setText(_translate("MainWindowAdmin", "Cerrar Sesión"))
-        self.label.setText(_translate("MainWindowAdmin", "<html><head/><body><p><span style=\" color:#ffffff;\">FOXYBOT</span></p></body></html>"))
+        self.label.setText(_translate("MainWindowAdmin",
+                                      "<html><head/><body><p><span style=\" color:#ffffff;\">FOXYBOT</span></p></body></html>"))
         self.lineEdit.setPlaceholderText(_translate("MainWindowAdmin", "¡Escribe aquí tus dudas!"))
         self.btn_enviar.setText(_translate("MainWindowAdmin", "Enviar"))
-        self.label_3.setText(_translate("MainWindowAdmin", "<html><head/><body><p><span style=\" font-size:18pt;\">Gestión de servicios</span></p></body></html>"))
+        self.label_3.setText(_translate("MainWindowAdmin",
+                                        "<html><head/><body><p><span style=\" font-size:18pt;\">Gestión de servicios</span></p></body></html>"))
         self.btn_eliminar.setText(_translate("MainWindowAdmin", "eliminar"))
         self.btn_Nuevo.setText(_translate("MainWindowAdmin", "+Nuevo"))
         item = self.tableWidget.horizontalHeaderItem(0)
@@ -780,7 +778,8 @@ class Ui_MainWindowAdmin(object):
         item.setText(_translate("MainWindowAdmin", "Agregado por"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("MainWindowAdmin", "Fecha de adición"))
-        self.label_12.setText(_translate("MainWindowAdmin", "<html><head/><body><p><span style=\" font-family:\'sans-serif\'; font-size:18pt;\">Gestión de Editores</span></p></body></html>"))
+        self.label_12.setText(_translate("MainWindowAdmin",
+                                         "<html><head/><body><p><span style=\" font-family:\'sans-serif\'; font-size:18pt;\">Gestión de Editores</span></p></body></html>"))
         self.btn_eliminar_3.setText(_translate("MainWindowAdmin", "eliminar"))
         self.btn_Nuevo_3.setText(_translate("MainWindowAdmin", "+Nuevo"))
         item = self.tableWidget_3.horizontalHeaderItem(0)
@@ -791,11 +790,13 @@ class Ui_MainWindowAdmin(object):
         item.setText(_translate("MainWindowAdmin", "Agregado por"))
         item = self.tableWidget_3.horizontalHeaderItem(3)
         item.setText(_translate("MainWindowAdmin", "Fecha de adición"))
-        self.label_2.setText(_translate("MainWindowAdmin", "<html><head/><body><p align=\"center\">FOXYBOT Versión 1.0</p></body></html>"))
+        self.label_2.setText(_translate("MainWindowAdmin",
+                                        "<html><head/><body><p align=\"center\">FOXYBOT Versión 1.0</p></body></html>"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindowAdmin = QtWidgets.QMainWindow()
     ui = Ui_MainWindowAdmin()

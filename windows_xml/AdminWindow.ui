@@ -518,7 +518,7 @@ QPushButton:hover {
 }</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_chat">
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -787,7 +787,7 @@ QPushButton:hover {
 	font: 14pt &quot;Calibri&quot;;
 	color: rgb(255, 255, 255);
 	
-	background-color: rgb(255, 0, 0);
+	background-color: rgb(0, 46, 109);
 	border: 0px solid;
 	border-radius:15px;
 }
@@ -803,7 +803,7 @@ QPushButton:hover {
 </string>
                      </property>
                      <property name="text">
-                      <string>eliminar</string>
+                      <string>Editar</string>
                      </property>
                      <property name="flat">
                       <bool>false</bool>
@@ -956,7 +956,7 @@ QPushButton:hover {
 	font: 14pt &quot;Calibri&quot;;
 	color: rgb(255, 255, 255);
 	
-	background-color: rgb(255, 0, 0);
+	background-color: rgb(0, 46, 109);
 	border: 0px solid;
 	border-radius:15px;
 }
@@ -972,7 +972,7 @@ QPushButton:hover {
 </string>
                         </property>
                         <property name="text">
-                         <string>eliminar</string>
+                         <string>Editar</string>
                         </property>
                         <property name="flat">
                          <bool>false</bool>
@@ -1023,7 +1023,7 @@ QPushButton:hover {
 </string>
                         </property>
                         <property name="text">
-                         <string>+Nuevo</string>
+                         <string>Nuevo</string>
                         </property>
                         <property name="flat">
                          <bool>false</bool>
@@ -1036,17 +1036,17 @@ QPushButton:hover {
                      <widget class="QTableWidget" name="tableWidget_3">
                       <column>
                        <property name="text">
-                        <string>Título</string>
+                        <string>Estado</string>
                        </property>
                       </column>
                       <column>
                        <property name="text">
-                        <string>Numero de soluciones</string>
+                        <string>Nombre</string>
                        </property>
                       </column>
                       <column>
                        <property name="text">
-                        <string>Agregado por</string>
+                        <string>Coreo</string>
                        </property>
                        <property name="textAlignment">
                         <set>AlignLeading|AlignVCenter</set>
@@ -1054,7 +1054,12 @@ QPushButton:hover {
                       </column>
                       <column>
                        <property name="text">
-                        <string>Fecha de adición</string>
+                        <string>Num. Empleado</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Fecha de adiciòn</string>
                        </property>
                       </column>
                      </widget>

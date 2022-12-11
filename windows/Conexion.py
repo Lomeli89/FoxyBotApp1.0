@@ -1,21 +1,26 @@
 import pymysql
+import re
+
+
 
 class DataBase:
     def __init__(self):
         self.conexion = pymysql.connect(
             host='localhost',
-            user = 'root',
-            password = 'angelus'    ,
-            db = 'foxybotdb')
+            user='root',
+            password='angelus',
+            db='foxybotdb')
 
         self.cursor = self.conexion.cursor()
         print("conexion establecida")
+
     def busca_user(self, correo_electronico):
         cur = self.conexion.cursor()
-        sql = "SELECT usuarios FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
+        sql = "SELECT correo_electronico FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
         cur.execute(sql)
         correox = cur.fetchall()
         cur.close()
+
         return correox
 
     def busca_contra(self, password):
@@ -25,56 +30,50 @@ class DataBase:
         passwordx = cur.fetchall()
         cur.close()
         return passwordx
-    def guardarDatos(self):
-        cur = self.conexion.cursor()
-        sql = 'INSERT * FROM usuarios WHERE  ={}'.format()
 
-#.....................................................Funciones extras
-
-    def gDatos(self,nombre, apellido, correo_electronico,id_tipo_usuario,estatus,password):
+    def gDatos(self, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password):
         cur = self.conexion.cursor()
         sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`password`) VALUES (%s,%s,%s,%s,%s,%s)"
-        cur.execute(sql,(format(nombre),(apellido),(correo_electronico),(id_tipo_usuario),(estatus),(password)))
+        cur.execute(sql, (format(nombre), (apellido), (correo_electronico), (id_tipo_usuario), (estatus), (password)))
         self.conexion.commit()
-        print(nombre, apellido,correo_electronico,id_tipo_usuario,estatus,password)
+        print(nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password)
 
-    def validacion(self, correo_electronico):
+    def gServicios(self, nombre_servicio):
         cur = self.conexion.cursor()
-        sql = "SELECT usuarios FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
-        cur.execute(sql)
-        correox = cur.fetchall()
-        cur.close()
-        return correox
+        sql = "INSERT INTO `servicio` (`nombre_servicio`) VALUES (%s)"
+        cur.execute(sql, (format(nombre_servicio)))
+        self.conexion.commit()
+        print("DB: " + nombre_servicio)
+    def gContenido(self, pregunta, informacion):
+        cur = self.conexion.cursor()
+        sql = "INSERT INTO `preguntas` (`pregunta`,`informacion`) VALUES (%s,%s)"
+        cur.execute(sql, (format(pregunta), (informacion)))
+        self.conexion.commit()
+        print("DB: " + pregunta +" "+ informacion)
 
+    def buscar_usuario_y_contrasena(self, correo_electronico, password):
+        cur = self.conexion.cursor()
+        # Crea una consulta SQL para buscar un usuario con el email y contraseña especificados.
+        sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND password = ?"
 
+        # Agrega un mensaje de depuración para mostrar los parámetros pasados a la función.
+        print("Buscando usuario con correo electrónico: {} y contraseña: {}".format(correo_electronico, password))
 
-
-
-
-
-
-
-
-
-    def select_info(self, id_usuarios):
-        sql = 'SELECT * FROM id_usuarios, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, fecha_registro, password ={}'.format(id_usuarios)
-
+        # Ejecuta la consulta y retorna los resultados.
         try:
-            cur = self.conexion.cursor()
-            cur.execute(sql)
-            user = cur.fetchone()
+            # Ejecuta la consulta y retorna los resultados.
+            cur.execute(sql, (correo_electronico, password))
+            cuentax = cur.fetchall()
+            cur.close()
 
-            print("id: ", user[0])
-            print("nombre: ", user[1])
-            print("apellido: ", user[2])
-            print("correo_electronico: ", user[3])
-            print("id_tipo_usuario: ", user[4])
-            print("estatus: ", user[5])
-            print("fecha_registro: ", user[6])
-            print("password: ", user[7])
+            # Agrega un mensaje de depuración para mostrar el resultado de la consulta SQL.
+            print("Resultado de la consulta SQL: {}".format(cuentax))
 
+            return cuentax
         except Exception as e:
-            raise
+            print("error")
+    # En caso de error, imprime un mensaje con información so
 
 
-database = DataBase()
+
+

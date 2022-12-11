@@ -1,9 +1,10 @@
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from windows import Conexion
 
 
-class Ui_agregarContenido(object):
+class Ui_agregarContenidoEditor(object):
     def setupUi(self, agregarContenido):
         agregarContenido.setObjectName("agregarContenido")
         agregarContenido.resize(538, 469)
@@ -129,16 +130,18 @@ class Ui_agregarContenido(object):
         self.btn_Nuevo_2.clicked.connect(agregarContenido.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(agregarContenido)
 
-        self.btn_Nuevo.clicked.connect(self.guardarServicio)
+        self.btn_Nuevo.clicked.connect(self.guardarContenido)
 
-    def guardarServicio(self):
+    def guardarContenido(self):
         self.datos = Conexion.DataBase()
 
-        temp_nombre_servicio = self.lineEdit.text()
+        temp_nombre_solucion = self.lineEdit.text()
+        temp_solucion = self.lineEdit_3.text()
 
-        print(temp_nombre_servicio)
 
-        self.datos.gServicios(temp_nombre_servicio)
+        print(temp_nombre_solucion, temp_solucion)
+
+        self.datos.gContenido(temp_nombre_solucion,temp_solucion)
 
         print("Guardado correctamente")
 
@@ -146,8 +149,8 @@ class Ui_agregarContenido(object):
     def retranslateUi(self, agregarContenido):
         _translate = QtCore.QCoreApplication.translate
         agregarContenido.setWindowTitle(_translate("agregarContenido", "Dialog"))
-        self.label.setText(_translate("agregarContenido", "TÍTULO DE SERVICIO:"))
-        self.lineEdit.setPlaceholderText(_translate("agregarContenido", "Escriba el título deL servicio (ej. Reinscripciones)"))
+        self.label.setText(_translate("agregarContenido", "TÍTULO DE SOLUCIÓN:"))
+        self.lineEdit.setPlaceholderText(_translate("agregarContenido", "Escriba el título de la solucion (ej. Reinscripciones)"))
         self.lineEdit_2.setPlaceholderText(_translate("agregarContenido", "Escriba un área de servicio"))
         self.lineEdit_3.setPlaceholderText(_translate("agregarContenido", "Describa la solución"))
         self.lineEdit_4.setPlaceholderText(_translate("agregarContenido", "Escriba palabras que puedan llegar a mencionar los usuarios (ej. reinscribirse)"))
@@ -162,7 +165,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     agregarContenido = QtWidgets.QDialog()
-    ui = Ui_agregarContenido()
+    ui = Ui_agregarContenidoEditor()
     ui.setupUi(agregarContenido)
     agregarContenido.show()
     sys.exit(app.exec_())

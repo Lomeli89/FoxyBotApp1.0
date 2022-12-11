@@ -2,7 +2,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import Conexion
 #import bcrypt
-import re
 class Ui_MainWindowLogin(object):
     def setupUi(self, MainWindowLogin, ):
         MainWindowLogin.setObjectName("MainWindowLogin")
@@ -177,43 +176,29 @@ class Ui_MainWindowLogin(object):
 
         self.btn_iniciarSesion.clicked.connect(self.inicio)
 
-
     def inicio(self):
-
-        self.datos = Conexion.DataBase()
-
-
-        temp_entradas_email = self.input_Email.text()
-        temp_entradas_pass = self.input_Password.text()
-
-        
-
-        temp_entradas_emaill = str("'"+ temp_entradas_email + "'")
-        temp_entradas_passs = str("'"+ temp_entradas_pass + "'")
-        #print(temp_entradas_pass)
-        si1=0
-        si2=0
-        dato1 = self.datos.busca_user(temp_entradas_emaill)
-        dato2 = self.datos.busca_contra(temp_entradas_passs)
-       # print(dato2[0][0])
-
-        if dato1[0][0]==temp_entradas_email:
-
-            if dato2[0][0] == temp_entradas_pass:
-
-                 self.abrir_Estudiante()
-
-            else:
-                print("no hay")
+        # Verifica que los campos no estén vacíos
+        if self.input_Email.text() == "" or self.input_Password.text() == "":
+            self.info_campos_texto()
+            return False
         else:
-            print("no hay2")
+            self.datos = Conexion.DataBase()
 
+            # Obtiene el usuario y la contraseña del formulario
+            temp_entradas_email = self.input_Email.text()
+            temp_entradas_pass = self.input_Password.text()
 
+            # Llama a la función que busca el usuario y la contraseña en la base de datos
+            dato1 = self.datos.busca_usuario_contraseña(temp_entradas_email, temp_entradas_pass)
 
-
-
-
-
+            # Verifica si el resultado de la función es válido
+            if dato1:
+                # Si se encontró al menos un usuario que coincide con los criterios de búsqueda,
+                # abre la ventana de "Estudiante".
+                self.abrir_Estudiante()
+            else:
+                self.error_entrada()
+        # Si no se encontró ningún usuario que coincida con los criterios de bú
 
     def vfnIngreso(self):
         varEmail = str
@@ -255,6 +240,14 @@ class Ui_MainWindowLogin(object):
         import tkinter
         from tkinter import messagebox
         error = tkinter.messagebox.showerror("Error", "Datos o dato incorrecto")
+    def error_pass(self):
+        import tkinter
+        from tkinter import messagebox
+        error = tkinter.messagebox.showerror("Error", "contraseña incorrecta")
+    def error_email(self):
+        import tkinter
+        from tkinter import messagebox
+        error = tkinter.messagebox.showerror("Error", "email no existe")
 
     def retranslateUi(self, MainWindowLogin):
         _translate = QtCore.QCoreApplication.translate

@@ -73,31 +73,6 @@
     <string>Escriba el título de la solución a ingresar (ej. cómo reinscribirse)</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>130</y>
-     <width>471</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit{
-	background-color: rgb(217, 217, 217);
-	font: 9pt &quot;MS Sans Serif&quot;;
-	border: 2px solid rgb(158, 158, 158);
-	border-radius: 15px;
-	
-}</string>
-   </property>
-   <property name="placeholderText">
-    <string>Seleccione un área de servicio</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="lineEdit_3">
    <property name="enabled">
     <bool>true</bool>
@@ -105,7 +80,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>200</y>
+     <y>260</y>
      <width>471</width>
      <height>101</height>
     </rect>
@@ -129,36 +104,11 @@
     <string>Describa la solución</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>350</y>
-     <width>471</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit{
-	background-color: rgb(217, 217, 217);
-	font: 9pt &quot;MS Sans Serif&quot;;
-	border: 2px solid rgb(158, 158, 158);
-	border-radius: 15px;
-	
-}</string>
-   </property>
-   <property name="placeholderText">
-    <string>Escriba palabras que puedan llegar a mencionar los usuarios (ej. reinscribirse)</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>100</y>
+     <y>130</y>
      <width>211</width>
      <height>21</height>
     </rect>
@@ -173,8 +123,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>180</y>
+     <x>30</x>
+     <y>230</y>
      <width>141</width>
      <height>16</height>
     </rect>
@@ -184,22 +134,6 @@
    </property>
    <property name="text">
     <string>SOLUCIÓN:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>320</y>
-     <width>191</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
-   </property>
-   <property name="text">
-    <string>PALABRAS CLAVE:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Nuevo">
@@ -289,11 +223,26 @@ QPushButton:hover {
 </string>
    </property>
    <property name="text">
-    <string>Eliminar</string>
+    <string>Cancelar</string>
    </property>
    <property name="flat">
     <bool>false</bool>
    </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>441</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Control escolar</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

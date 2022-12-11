@@ -295,11 +295,6 @@ QPushButton:hover {
      <string>Editor</string>
     </property>
    </item>
-   <item>
-    <property name="text">
-     <string>Alumno</string>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>
