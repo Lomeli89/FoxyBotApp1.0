@@ -137,13 +137,14 @@ class Ui_agregarContenido(object):
         self.btn_Nuevo_2.clicked.connect(agregarContenido.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(agregarContenido)
 
+
+
     def retranslateUi(self, agregarContenido):
         _translate = QtCore.QCoreApplication.translate
         agregarContenido.setWindowTitle(_translate("agregarContenido", "Dialog"))
         self.label.setText(_translate("agregarContenido", "TÍTULO DE LA SOLUCIÓN:"))
         self.lineEdit.setPlaceholderText(_translate("agregarContenido", "Escriba el título de la solución a ingresar (ej. cómo reinscribirse)"))
         self.lineEdit_2.setPlaceholderText(_translate("agregarContenido", "Seleccione un área de servicio"))
-        self.lineEdit_3.setText(_translate("agregarContenido", "Describa la solución"))
         self.lineEdit_3.setPlaceholderText(_translate("agregarContenido", "Describa la solución"))
         self.lineEdit_4.setPlaceholderText(_translate("agregarContenido", "Escriba palabras que puedan llegar a mencionar los usuarios (ej. reinscribirse)"))
         self.label_2.setText(_translate("agregarContenido", "ÁREA DE SERVICIO:"))

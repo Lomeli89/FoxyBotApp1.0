@@ -143,7 +143,6 @@ class Ui_agregarEditor(object):
         self.label.setText(_translate("agregarEditor", "NOMBRE:"))
         self.lineEdit.setPlaceholderText(_translate("agregarEditor", "Nombre completo "))
         self.lineEdit_2.setPlaceholderText(_translate("agregarEditor", "Correo electrónico "))
-        self.lineEdit_3.setText(_translate("agregarEditor", "Describa la solución"))
         self.lineEdit_3.setPlaceholderText(_translate("agregarEditor", "Número de empleado "))
         self.lineEdit_4.setPlaceholderText(_translate("agregarEditor", "Seleccione un rol "))
         self.label_2.setText(_translate("agregarEditor", "CORREO ELECTRÓNICO:"))

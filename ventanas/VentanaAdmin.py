@@ -479,7 +479,7 @@ class Ui_VentanaAdmin(object):
         self.ventana.show()
     def agregarEditor(self):
         self.ventana = QtWidgets.QMainWindow()
-        from ventanas.AgregarEditor import Ui_agregarEditor
+        from windows.AgregarEditor import Ui_agregarEditor
         self.ui = Ui_agregarEditor()
         self.ui.setupUi(self.ventana)
         self.ventana.show()

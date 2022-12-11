@@ -360,7 +360,7 @@ class Ui_VentanaEditor(object):
     def nuevoContenido(self):
 
         self.ventana = QtWidgets.QMainWindow()
-        from ventanas.AgregarContenido import Ui_agregarContenido
+        from windows.AgregarContenido import Ui_agregarContenido
         self.ui = Ui_agregarContenido()
         self.ui.setupUi(self.ventana)
         self.ventana.show()

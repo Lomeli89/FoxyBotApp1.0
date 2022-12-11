@@ -660,7 +660,10 @@ class Ui_MainWindowAdmin(object):
         self.btn_servicios.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_servicios))
         self.btn_editores.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_editores))
         self.btn_cerrarSesion.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(MainWindowAdmin.close()))
+
         self.btn_enviar.clicked.connect(self.sendMessage)
+        self.btn_Nuevoclicked.connect(self.nuevoServicio)
+
 
 
     def sendMessage(self):
@@ -742,7 +745,14 @@ class Ui_MainWindowAdmin(object):
         self.listWidget.setMinimumWidth(recW.width())
         print(f"contenido de recibido {recW.label_4.text()}")
 
+
+
     def nuevoServicio(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.AgregarContenido import Ui_agregarContenido
+        self.ui = Ui_agregarContenido()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
 
 

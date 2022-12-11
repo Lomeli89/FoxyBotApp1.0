@@ -195,7 +195,7 @@ class Ui_MainWindowRegistro(object):
         self.retranslateUi(MainWindowRegistro)
         QtCore.QMetaObject.connectSlotsByName(MainWindowRegistro)
 
-        self.btn_Registrarme.clicked.connect(self.registro_2)
+        self.btn_Registrarme.clicked.connect(self.registro)
 
 
     def registro(self):
