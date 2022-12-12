@@ -135,10 +135,10 @@ class Ui_agregarContenidoEditor(object):
     def guardarContenido(self):
         self.datos = Conexion.DataBase()
 
-        temp_nombre_solucion = self.lineEdit.text()
-        temp_nombre_servicio = self.lineEdit_2.text()
-        temp_solucion = self.lineEdit_3.text()
-        temp_palabra_clave = self.lineEdit_4.text()
+        temp_nombre_solucion = self.lineEdit.text().upper()
+        temp_nombre_servicio = self.lineEdit_2.text().upper()
+        temp_solucion = self.lineEdit_3.text().upper()
+        temp_palabra_clave = self.lineEdit_4.text().upper()
 
 
         print(temp_nombre_solucion, temp_solucion, temp_nombre_servicio, temp_palabra_clave)

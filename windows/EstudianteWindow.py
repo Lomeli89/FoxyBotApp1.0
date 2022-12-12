@@ -1,10 +1,15 @@
 from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
-from recibeWidget import  Widget as recWidget
+from recibeWidget import Widget as recWidget
 from sendWidget import Widget as senWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
-text_temp = str("Hola bro")
+
+from windows import Conexion
+
+text_temp = str("2")
 text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
 text = str
+
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindowEstudiante(object):
     def setupUi(self, MainWindowEstudiante):
@@ -402,18 +407,27 @@ class Ui_MainWindowEstudiante(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindowEstudiante)
         self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_chat))
         self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_about))
-        self.btn_cerrarSesion.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(MainWindowEstudiante.close()))
+        #self.btn_cerrarSesion.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(MainWindowEstudiante.close()))
         self.btn_enviar.clicked.connect(self.sendMessage)
+        self.btn_cerrarSesion.clicked.connect(self.cerrar_sesion)
+        self.btn_cerrarSesion.clicked.connect(MainWindowEstudiante.close)
+
+
+
+    def cerrar_sesion(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.LoginWindow import Ui_MainWindowLogin
+        self.ui = Ui_MainWindowLogin()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
 
     def sendMessage(self):
+        id_pregunta = self.lineEdit.text()
+        id_pregunta_1 = str("'" + id_pregunta + "'")
+        from windows import Conexion
         sendW = senWidget()
-        sendW.label_2.setText(str(self.lineEdit.text()))
-        print(f"Contenido de lineEdit : {self.lineEdit.text()}")
-        print(f"Contenido de sendW : {str(sendW.label_2.text())}")
-        '''if conn != None:
-            label_2 = self.lineEdit.text().decode('utf-8')
-            conn.send(label_2)'''
+        sendW.label_2.setText(str(id_pregunta_1))
         item = QListWidgetItem()
         item.setSizeHint(sendW.sizeHint())
         self.listWidget.addItem(item)
@@ -422,25 +436,28 @@ class Ui_MainWindowEstudiante(object):
         print("texto enviado correctamente")
         self.lineEdit.setText('')
         print("campo de texto limpio")
-        # respuesta hola >> hi
-        if str(sendW.label_2.text()) == "Hola" or "hola" or "ola":
+        self.datos = Conexion.DataBase()
+        self.pregunta = self.datos.buscar_solucion(id_pregunta_1)
+        print(self.pregunta)
+        print("paso")
+
+        if len(self.pregunta) != 0:
             print("texto recibido")
             recW = recWidget()
-            text = text_temp
-            recW.label_4.setText(str(text))
+            recW.label_4.setText(str(self.pregunta[0][2]))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, recW)
             self.listWidget.setMinimumWidth(recW.width())
-            print(f"contenido de recibido {recW.label_4.text()}")
+            print(f"contenido de recibido 1 {recW.label_4.text()}")
 
-        elif str(sendW.label_2.text()) == "xd":
+        elif str(sendW.label_2.text()) == "Hola":
             print("texto recibido")
             recW = recWidget()
-            text = " jajajajaja "
-            recW.label_4.setText(str(text))
+            text3 = " Hola "
+            recW.label_4.setText(str(text3))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
@@ -452,8 +469,8 @@ class Ui_MainWindowEstudiante(object):
             print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
             print("texto recibido")
             recW = recWidget()
-            text = text_temp2
-            recW.label_4.setText(str(text))
+            text3 = text_temp2
+            recW.label_4.setText(str(text3))
             recW.label_4.text()
             item = QListWidgetItem()
             item.setSizeHint(recW.sizeHint())
@@ -475,7 +492,7 @@ class Ui_MainWindowEstudiante(object):
     def bienvenidaAutomatica(self):
         print("texto recibido")
         recW = recWidget()
-        text = "Hola Bienvenido, soy FoxyBot, estoy para ayudarte con tus dudas acerca del area de control escolar."
+        text = "Hola Bienvenido, soy FoxyBot, estoy para ayudarte con alguna duda que tengas, puedes ingresar y probar con esta opcion que tengo implementado: - Reinscripción."
         recW.label_4.setText(str(text))
         recW.label_4.text()
         item = QListWidgetItem()

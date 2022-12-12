@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
+    <width>1002</width>
     <height>600</height>
    </rect>
   </property>
@@ -518,7 +518,7 @@ QPushButton:hover {
 }</string>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_chat">
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -772,6 +772,58 @@ QPushButton:hover {
                     </widget>
                    </item>
                    <item>
+                    <widget class="QPushButton" name="btn_eliminar_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	
+	font: 14pt &quot;Calibri&quot;;
+	color: rgb(255, 255, 255);
+	
+	background-color: rgb(0, 46, 109);
+	border: 0px solid;
+	border-radius:15px;
+}
+QPushButton:hover {
+	background-color: rgb(93, 129, 163);
+}
+
+
+	
+	
+	
+	
+</string>
+                     </property>
+                     <property name="text">
+                      <string>Eliminar</string>
+                     </property>
+                     <property name="flat">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QPushButton" name="btn_eliminar">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -885,7 +937,7 @@ QPushButton:hover {
                    </column>
                    <column>
                     <property name="text">
-                     <string>Soluciòn</string>
+                     <string>Solución</string>
                     </property>
                    </column>
                    <column>
@@ -1062,11 +1114,6 @@ QPushButton:hover {
                      <widget class="QTableWidget" name="tableWidget_3">
                       <column>
                        <property name="text">
-                        <string>Id</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
                         <string>Nombre</string>
                        </property>
                       </column>
@@ -1077,7 +1124,7 @@ QPushButton:hover {
                       </column>
                       <column>
                        <property name="text">
-                        <string>Coreo</string>
+                        <string>Correo</string>
                        </property>
                        <property name="textAlignment">
                         <set>AlignLeading|AlignVCenter</set>
@@ -1085,7 +1132,7 @@ QPushButton:hover {
                       </column>
                       <column>
                        <property name="text">
-                        <string>Rol &gt; Editor = 1 , Estudiante = 0</string>
+                        <string>Roles: Editor = 1 , Estudiante = 0</string>
                        </property>
                       </column>
                       <column>
@@ -1095,7 +1142,7 @@ QPushButton:hover {
                       </column>
                       <column>
                        <property name="text">
-                        <string>Numero Empoleado</string>
+                        <string>Numero Empleado</string>
                        </property>
                       </column>
                      </widget>
@@ -1200,6 +1247,130 @@ color: rgb(167, 182, 203);</string>
                  </widget>
                 </item>
                </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page">
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QFrame" name="frame_17">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                   <item>
+                    <widget class="QPushButton" name="pushButton_3">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>ELIMINAR</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="styleSheet">
+                      <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Buscar conenido por título:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_2"/>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_Nuevo_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	
+	font: 14pt &quot;Calibri&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 46, 109);
+	border: 0px solid;
+	border-radius:7px;
+}
+QPushButton:hover {
+	background-color: rgb(93, 129, 163);
+}
+
+
+	
+	
+	
+	
+</string>
+                     </property>
+                     <property name="text">
+                      <string>BUSCAR</string>
+                     </property>
+                     <property name="flat">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_2">
+                   <column>
+                    <property name="text">
+                     <string>Título</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Solución</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Área de servicio</string>
+                    </property>
+                    <property name="textAlignment">
+                     <set>AlignLeading|AlignVCenter</set>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Palabra clave</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </item>
              </layout>
             </widget>

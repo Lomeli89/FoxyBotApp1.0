@@ -22,6 +22,8 @@ self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.p
         self.btn_Nuevo.clicked.connect(self.nuevoServicio)
         self.pushButton.clicked.connect(self.mostrar_soluciones)
 
+        self.pushButton_2.clicked.connect(self.mUsuarios_1)
+
     def mostrar_soluciones(self):
         self.datos = Conexion.DataBase()
         datos1 = self.datos.mContenido()
@@ -30,12 +32,46 @@ self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.p
         tablerow = 0
         for row in datos1:
             self.fila = row[0]
-            self.tableWidget.setItem(tablerow,0,QtWidgets.QTableWidgetItem(row[1]))
-            self.tableWidget.setItem(tablerow,1,QtWidgets.QTableWidgetItem(row[2]))
-            self.tableWidget.setItem(tablerow,2,QtWidgets.QTableWidgetItem(row[3]))
-            self.tableWidget.setItem(tablerow,3,QtWidgets.QTableWidgetItem(row[4]))
-            tablerow +=1
+            self.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row[1]))
+            self.tableWidget.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(row[2]))
+            self.tableWidget.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(row[3]))
+            self.tableWidget.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(row[4]))
+            tablerow += 1
 
+    def mUsuarios_1(self):
+        self.datos = Conexion.DataBase()
+        datos1 = self.datos.mUsuarios()
+        i = len(datos1)
+        self.tableWidget_3.setRowCount(i)
+        tablerow = 0
+        for row in datos1:
+            self.newFila = row[0]
+            self.tableWidget_3.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row[1]))
+            self.tableWidget_3.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(row[2]))
+            self.tableWidget_3.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(row[3]))
+            self.tableWidget_3.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(row[4]))
+            self.tableWidget_3.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(row[5]))
+            self.tableWidget_3.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(row[6]))
+            tablerow += 1
+
+
+    def sendMessageDB(self):
+        sendW = senWidget()
+        sendW.label_2.setText(str(self.lineEdit.text()))
+        print(f"Contenido de lineEdit : {self.lineEdit.text()}")
+        print(f"Contenido de sendW : {str(sendW.label_2.text())}")
+        item = QListWidgetItem()
+        item.setSizeHint(sendW.sizeHint())
+        self.listWidget.addItem(item)
+        self.listWidget.setItemWidget(item, sendW)
+        self.listWidget.setMinimumWidth(sendW.width())
+        print("texto enviado correctamente")
+        self.lineEdit.setText('')
+        print("campo de texto limpio")
+        # respuesta hola >> hi
+        self.datos = Conexion.DataBase()
+        dato1 = self.datos.bot_responde_pregunta(self.lineEdit.text())
+        #if str(sendW.label_2.text()) == dato1[0][0]:
 
 
     def sendMessage(self):
@@ -43,9 +79,6 @@ self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.p
         sendW.label_2.setText(str(self.lineEdit.text()))
         print(f"Contenido de lineEdit : {self.lineEdit.text()}")
         print(f"Contenido de sendW : {str(sendW.label_2.text())}")
-        '''if conn != None:
-            label_2 = self.lineEdit.text().decode('utf-8')
-            conn.send(label_2)'''
         item = QListWidgetItem()
         item.setSizeHint(sendW.sizeHint())
         self.listWidget.addItem(item)

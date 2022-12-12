@@ -175,6 +175,22 @@ class Ui_MainWindowLogin(object):
         ##################eventos###############################
 
         self.btn_iniciarSesion.clicked.connect(self.inicio)
+        self.btn_irRegistrate.clicked.connect(self.registrarme)
+        self.btn_PruebaFoxyBot.clicked.connect(self.prueba)
+
+    def prueba(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.VisitanteWindow import Ui_MainWindowVisitante
+        self.ui = Ui_MainWindowVisitante
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+    def registrarme(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.RegistroWindow import Ui_MainWindowRegistro
+        self.ui = Ui_MainWindowRegistro()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+        MainWindowLogin.close()
 
     def inicio(self):
         # Verifica que los campos no estén vacíos
@@ -184,21 +200,22 @@ class Ui_MainWindowLogin(object):
         else:
             self.datos = Conexion.DataBase()
 
-            # Obtiene el usuario y la contraseña del formulario
             temp_entradas_email = self.input_Email.text()
             temp_entradas_pass = self.input_Password.text()
 
-            # Llama a la función que busca el usuario y la contraseña en la base de datos
-            dato1 = self.datos.busca_usuario_contraseña(temp_entradas_email, temp_entradas_pass)
 
-            # Verifica si el resultado de la función es válido
-            if dato1:
-                # Si se encontró al menos un usuario que coincide con los criterios de búsqueda,
-                # abre la ventana de "Estudiante".
-                self.abrir_Estudiante()
+            dato1 = self.datos.buscar_usuarios(temp_entradas_email)
+            dato2 = self.datos.busca_contra(temp_entradas_pass)
+
+
+            if dato1[0][0] == 0:
+                if dato2[0][0] == 0:
+                    self.abrir_Estudiante()
+                else:
+                    self.error_entrada()
             else:
                 self.error_entrada()
-        # Si no se encontró ningún usuario que coincida con los criterios de bú
+
 
     def vfnIngreso(self):
         varEmail = str

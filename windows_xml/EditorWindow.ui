@@ -810,12 +810,12 @@ QPushButton:hover {
                    </column>
                    <column>
                     <property name="text">
-                     <string>Área de servicio</string>
+                     <string>Solución</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Solución</string>
+                     <string>Área de servicio</string>
                     </property>
                     <property name="textAlignment">
                      <set>AlignLeading|AlignVCenter</set>

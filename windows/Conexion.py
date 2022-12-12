@@ -13,16 +13,13 @@ class DataBase:
 
         self.cursor = self.conexion.cursor()
         print("conexion establecida")
-
     def busca_user(self, correo_electronico):
         cur = self.conexion.cursor()
         sql = "SELECT correo_electronico FROM usuarios WHERE correo_electronico ={}".format(correo_electronico)
         cur.execute(sql)
         correox = cur.fetchall()
         cur.close()
-
         return correox
-
     def busca_contra(self, password):
         cur = self.conexion.cursor()
         sql = "SELECT password FROM usuarios WHERE password ={}".format(password)
@@ -30,27 +27,48 @@ class DataBase:
         passwordx = cur.fetchall()
         cur.close()
         return passwordx
-
+    def buscar_usuarios(self, correo_electronico):
+        cur = self.conexion.cursor()
+        sql = "SELECT * FROM usuarios WHERE correo_electronico = {}".format(correo_electronico)
+        cur.execute(sql)
+        busuax = cur.fetchall()
+        cur.close()
+        return busuax
+    def actualizar_usuario(self, id_usuarios, nombre, apellido, correo_electronico, id_tipo_usuario, password, numero_empleado):
+        cur = self.conexion.cursor()
+        sql = "UPDATE usuarios SET nombre ='{}', apellido ='{}', correo_electronico ='{}', id_tipo_usuario ='{}', password ='{}', numero_empleado = '{}' WHERE id_usuarios ='{}'".format( nombre, apellido, correo_electronico, id_tipo_usuario,password,numero_empleado,id_usuarios)
+        cur.execute(sql)
+        a = cur.rowcount
+        self.conexion.commit()
+        cur.close()
+        return a
     def gDatos(self, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password):
         cur = self.conexion.cursor()
         sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`password`) VALUES (%s,%s,%s,%s,%s,%s)"
         cur.execute(sql, (format(nombre), (apellido), (correo_electronico), (id_tipo_usuario), (estatus), (password)))
         self.conexion.commit()
         print(nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password)
-
+    def bot_responde_pregunta(self, palabra_clave):
+        cur = self.conexion.cursor()
+        sql = "SELECT * FROM preguntas WHERE palabra_clave = {}".format(palabra_clave)
+        cur.execute(sql)
+        p1reguntax = cur.fetchall()
+        cur.close()
+        return p1reguntax
     def mContenido(self):
         cur = self.conexion.cursor()
         sql = "SELECT * FROM Preguntas"
         cur.execute(sql)
         contenidox = cur.fetchall()
+        print(contenidox)
         return contenidox
-
-    def gServicios(self, nombre_servicio):
+    def mUsuarios(self):
         cur = self.conexion.cursor()
-        sql = "INSERT INTO `servicio` (`nombre_servicio`) VALUES (%s)"
-        cur.execute(sql, (format(nombre_servicio)))
-        self.conexion.commit()
-        print("DB: " + nombre_servicio)
+        sql = "SELECT * FROM usuarios"
+        cur.execute(sql)
+        usuariox = cur.fetchall()
+        print(usuariox)
+        return usuariox
     def gContenido(self, pregunta, informacion, nombre_servicio,palabra_clave):
         cur = self.conexion.cursor()
         sql = "INSERT INTO `preguntas` (`pregunta`,`informacion`,`nombre_servicio`,`palabra_clave`) VALUES (%s,%s,%s,%s)"
@@ -59,29 +77,24 @@ class DataBase:
         cur.close()
         print("DB: " + pregunta +" "+ informacion +" "+nombre_servicio+" "+palabra_clave)
 
-    '''def buscar_usuario_y_contrasena(self, correo_electronico, password):
+    def buscar_solucion(self, pregunta):
         cur = self.conexion.cursor()
-        # Crea una consulta SQL para buscar un usuario con el email y contraseña especificados.
-        sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND password = ?"
-
-        # Agrega un mensaje de depuración para mostrar los parámetros pasados a la función.
-        print("Buscando usuario con correo electrónico: {} y contraseña: {}".format(correo_electronico, password))
-
-        # Ejecuta la consulta y retorna los resultados.
-        try:
-            # Ejecuta la consulta y retorna los resultados.
-            cur.execute(sql, (correo_electronico, password))
-            cuentax = cur.fetchall()
-            cur.close()
-
-            # Agrega un mensaje de depuración para mostrar el resultado de la consulta SQL.
-            print("Resultado de la consulta SQL: {}".format(cuentax))
-
-            return cuentax
-        except Exception as e:
-            print("error")
-    # En caso de error, imprime un mensaje con información so
-
-'''
-
-
+        sql = "SELECT * FROM preguntas WHERE pregunta ={}".format(pregunta)
+        cur.execute(sql)
+        preguntax = cur.fetchall()
+        cur.close()
+        return preguntax
+    def eliminar_solucion(self,pregunta):
+        cur = self.conexion.cursor()
+        sql = "DELETE FROM preguntas WHERE pregunta = {}".format(pregunta)
+        cur.execute(sql)
+        self.conexion.commit()
+        cur.close()
+    def actualizar_solucion(self, id_pregunta, pregunta, informacion, nombre_servicio, palabra_clave):
+        cur = self.conexion.cursor()
+        sql = "UPDATE preguntas SET pregunta ='{}', informacion ='{}', nombre_servicio ='{}', palabra_clave ='{}' WHERE id_pregunta ='{}'".format(pregunta,informacion,nombre_servicio,palabra_clave,id_pregunta)
+        cur.execute(sql)
+        a = cur.rowcount
+        self.conexion.commit()
+        cur.close()
+        return a
