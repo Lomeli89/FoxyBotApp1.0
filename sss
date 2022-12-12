@@ -1,1 +1,125 @@
-https://code-with-me.global.jetbrains.com/fUFqRzqlFuobmJ48a5L8Cg#p=PC&fp=B31EC6423C7D684D88D419EBE40A3F4A50A0BA010170A387E433A25431C78A09
+from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
+from recibeWidget import Widget as recWidget
+from sendWidget import Widget as senWidget
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+from windows import Conexion
+
+text_temp = str("2")
+text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
+text = str
+
+
+
+
+self.btn_chat.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_chat))
+        self.btn_about.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_about))
+        self.btn_servicios.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_servicios))
+        self.btn_editores.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_editores))
+        self.btn_cerrarSesion.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(MainWindowAdmin.close()))
+
+        self.btn_enviar.clicked.connect(self.sendMessage)
+        self.btn_Nuevo.clicked.connect(self.nuevoServicio)
+        self.pushButton.clicked.connect(self.mostrar_soluciones)
+
+    def mostrar_soluciones(self):
+        self.datos = Conexion.DataBase()
+        datos1 = self.datos.mContenido()
+        i = len(datos1)
+        self.tableWidget.setRowCount(i)
+        tablerow = 0
+        for row in datos1:
+            self.fila = row[0]
+            self.tableWidget.setItem(tablerow,0,QtWidgets.QTableWidgetItem(row[1]))
+            self.tableWidget.setItem(tablerow,1,QtWidgets.QTableWidgetItem(row[2]))
+            self.tableWidget.setItem(tablerow,2,QtWidgets.QTableWidgetItem(row[3]))
+            self.tableWidget.setItem(tablerow,3,QtWidgets.QTableWidgetItem(row[4]))
+            tablerow +=1
+
+
+
+    def sendMessage(self):
+        sendW = senWidget()
+        sendW.label_2.setText(str(self.lineEdit.text()))
+        print(f"Contenido de lineEdit : {self.lineEdit.text()}")
+        print(f"Contenido de sendW : {str(sendW.label_2.text())}")
+        '''if conn != None:
+            label_2 = self.lineEdit.text().decode('utf-8')
+            conn.send(label_2)'''
+        item = QListWidgetItem()
+        item.setSizeHint(sendW.sizeHint())
+        self.listWidget.addItem(item)
+        self.listWidget.setItemWidget(item, sendW)
+        self.listWidget.setMinimumWidth(sendW.width())
+        print("texto enviado correctamente")
+        self.lineEdit.setText('')
+        print("campo de texto limpio")
+        # respuesta hola >> hi
+        if str(sendW.label_2.text()) == "1+1":
+            print("texto recibido")
+            recW = recWidget()
+            text3 = text_temp
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_4.text()}")
+
+        if str(sendW.label_2.text()) == "xd":
+            print("texto recibido")
+            recW = recWidget()
+            text3 = " jajajajaja "
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_4.text()}")
+        else:
+            print("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
+            print("texto recibido")
+            recW = recWidget()
+            text3 = text_temp2
+            recW.label_4.setText(str(text3))
+            recW.label_4.text()
+            item = QListWidgetItem()
+            item.setSizeHint(recW.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, recW)
+            self.listWidget.setMinimumWidth(recW.width())
+            print(f"contenido de recibido {recW.label_4.text()}")
+
+    def recMessage(self, text):
+        print("------------incio funcion 2-----------")
+        recW = recWidget()
+        # recW.label_2.setText(str(text))
+        item = QListWidgetItem()
+        item.setSizeHint(recW.sizeHint())
+        self.listWidget.addItem(item)
+        self.listWidget.setItemWidget(item, recW)
+        self.listWidget.setMinimumWidth(recW.width())
+
+    def bienvenidaAutomatica(self):
+        print("texto recibido")
+        recW = recWidget()
+        text = "Hola Bienvenido, soy FoxyBot, estoy para ayudarte con tus dudas acerca del area de control escolar."
+        recW.label_4.setText(str(text))
+        recW.label_4.text()
+        item = QListWidgetItem()
+        item.setSizeHint(recW.sizeHint())
+        self.listWidget.addItem(item)
+        self.listWidget.setItemWidget(item, recW)
+        self.listWidget.setMinimumWidth(recW.width())
+        print(f"contenido de recibido {recW.label_4.text()}")
+
+    def nuevoServicio(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.AgregarContenidoEditor import Ui_agregarContenidoEditor
+        self.ui = Ui_agregarContenidoEditor()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()

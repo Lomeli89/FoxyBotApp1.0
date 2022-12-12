@@ -136,14 +136,21 @@ class Ui_agregarContenidoEditor(object):
         self.datos = Conexion.DataBase()
 
         temp_nombre_solucion = self.lineEdit.text()
+        temp_nombre_servicio = self.lineEdit_2.text()
         temp_solucion = self.lineEdit_3.text()
+        temp_palabra_clave = self.lineEdit_4.text()
 
 
-        print(temp_nombre_solucion, temp_solucion)
+        print(temp_nombre_solucion, temp_solucion, temp_nombre_servicio, temp_palabra_clave)
 
-        self.datos.gContenido(temp_nombre_solucion,temp_solucion)
+        self.datos.gContenido(temp_nombre_solucion,temp_solucion,temp_nombre_servicio,temp_palabra_clave)
+        self.lineEdit.setText("")
+        self.lineEdit_2.setText("")
+        self.lineEdit_3.setText("")
+        self.lineEdit_4.setText("")
 
         print("Guardado correctamente")
+
 
 
     def retranslateUi(self, agregarContenido):

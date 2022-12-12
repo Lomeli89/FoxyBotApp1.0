@@ -332,7 +332,7 @@ QPushButton:hover {
 </string>
                      </property>
                      <property name="text">
-                      <string>Gestión de servicios</string>
+                      <string>Gestión de Contenido</string>
                      </property>
                      <property name="flat">
                       <bool>false</bool>
@@ -518,7 +518,7 @@ QPushButton:hover {
 }</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_chat">
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -749,12 +749,25 @@ QPushButton:hover {
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
+                    <widget class="QPushButton" name="pushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QLabel" name="label_3">
                      <property name="styleSheet">
                       <string notr="true">font: 75 11.5pt &quot;SansSerif&quot;;</string>
                      </property>
                      <property name="text">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Gestión de servicios&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Gestión de contenido&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                     </widget>
                    </item>
@@ -872,12 +885,12 @@ QPushButton:hover {
                    </column>
                    <column>
                     <property name="text">
-                     <string>Numero de soluciones</string>
+                     <string>Soluciòn</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Agregado por</string>
+                     <string>Área de servicio</string>
                     </property>
                     <property name="textAlignment">
                      <set>AlignLeading|AlignVCenter</set>
@@ -885,7 +898,7 @@ QPushButton:hover {
                    </column>
                    <column>
                     <property name="text">
-                     <string>Fecha de adición</string>
+                     <string>Palabra clave</string>
                     </property>
                    </column>
                   </widget>
@@ -917,6 +930,19 @@ QPushButton:hover {
                    <layout class="QVBoxLayout" name="verticalLayout_28">
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_17">
+                      <item>
+                       <widget class="QPushButton" name="pushButton_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Actualizar</string>
+                        </property>
+                       </widget>
+                      </item>
                       <item>
                        <widget class="QLabel" name="label_12">
                         <property name="styleSheet">
@@ -1036,12 +1062,17 @@ QPushButton:hover {
                      <widget class="QTableWidget" name="tableWidget_3">
                       <column>
                        <property name="text">
-                        <string>Estado</string>
+                        <string>Id</string>
                        </property>
                       </column>
                       <column>
                        <property name="text">
                         <string>Nombre</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Apellido</string>
                        </property>
                       </column>
                       <column>
@@ -1054,12 +1085,17 @@ QPushButton:hover {
                       </column>
                       <column>
                        <property name="text">
-                        <string>Num. Empleado</string>
+                        <string>Rol &gt; Editor = 1 , Estudiante = 0</string>
                        </property>
                       </column>
                       <column>
                        <property name="text">
-                        <string>Fecha de adiciòn</string>
+                        <string>Contraseña</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Numero Empoleado</string>
                        </property>
                       </column>
                      </widget>

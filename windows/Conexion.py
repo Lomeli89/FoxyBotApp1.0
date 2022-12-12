@@ -38,20 +38,28 @@ class DataBase:
         self.conexion.commit()
         print(nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password)
 
+    def mContenido(self):
+        cur = self.conexion.cursor()
+        sql = "SELECT * FROM Preguntas"
+        cur.execute(sql)
+        contenidox = cur.fetchall()
+        return contenidox
+
     def gServicios(self, nombre_servicio):
         cur = self.conexion.cursor()
         sql = "INSERT INTO `servicio` (`nombre_servicio`) VALUES (%s)"
         cur.execute(sql, (format(nombre_servicio)))
         self.conexion.commit()
         print("DB: " + nombre_servicio)
-    def gContenido(self, pregunta, informacion):
+    def gContenido(self, pregunta, informacion, nombre_servicio,palabra_clave):
         cur = self.conexion.cursor()
-        sql = "INSERT INTO `preguntas` (`pregunta`,`informacion`) VALUES (%s,%s)"
-        cur.execute(sql, (format(pregunta), (informacion)))
+        sql = "INSERT INTO `preguntas` (`pregunta`,`informacion`,`nombre_servicio`,`palabra_clave`) VALUES (%s,%s,%s,%s)"
+        cur.execute(sql, (format(pregunta),(informacion),(nombre_servicio),(palabra_clave)))
         self.conexion.commit()
-        print("DB: " + pregunta +" "+ informacion)
+        cur.close()
+        print("DB: " + pregunta +" "+ informacion +" "+nombre_servicio+" "+palabra_clave)
 
-    def buscar_usuario_y_contrasena(self, correo_electronico, password):
+    '''def buscar_usuario_y_contrasena(self, correo_electronico, password):
         cur = self.conexion.cursor()
         # Crea una consulta SQL para buscar un usuario con el email y contraseña especificados.
         sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND password = ?"
@@ -74,6 +82,6 @@ class DataBase:
             print("error")
     # En caso de error, imprime un mensaje con información so
 
-
+'''
 
 

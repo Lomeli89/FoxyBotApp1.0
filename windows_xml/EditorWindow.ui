@@ -805,12 +805,12 @@ QPushButton:hover {
                   <widget class="QTableWidget" name="tableWidget">
                    <column>
                     <property name="text">
-                     <string>Área de Servicio</string>
+                     <string>Título</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Título</string>
+                     <string>Área de servicio</string>
                     </property>
                    </column>
                    <column>
@@ -824,11 +824,6 @@ QPushButton:hover {
                    <column>
                     <property name="text">
                      <string>Palabras clave</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Fecha de modif.</string>
                     </property>
                    </column>
                   </widget>
