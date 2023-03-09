@@ -1,14 +1,7 @@
 from PyQt5.QtWidgets import QDialog, QApplication, QListWidgetItem
 from recibeWidget import Widget as recWidget
 from sendWidget import Widget as senWidget
-from PyQt5 import QtCore, QtGui, QtWidgets
-
 from windows import Conexion
-
-text_temp = str("2")
-text_temp2 = str("No logro entender tu mensaje, por favor se presciso con lo que quieres decirme")
-text = str
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -952,15 +945,7 @@ class Ui_MainWindowAdmin(object):
             self.listWidget.setMinimumWidth(recW.width())
             print(f"contenido de recibido {recW.label_4.text()}")
 
-    def recMessage(self, text):
-        print("------------incio funcion 2-----------")
-        recW = recWidget()
-        # recW.label_2.setText(str(text))
-        item = QListWidgetItem()
-        item.setSizeHint(recW.sizeHint())
-        self.listWidget.addItem(item)
-        self.listWidget.setItemWidget(item, recW)
-        self.listWidget.setMinimumWidth(recW.width())
+
 
     def bienvenidaAutomatica(self):
         print("texto recibido")

@@ -175,29 +175,32 @@ class Ui_MainWindowLogin(object):
         ##################eventos###############################
 
         self.btn_iniciarSesion.clicked.connect(self.inicio)
+
         self.btn_irRegistrate.clicked.connect(self.registrarme)
+        self.btn_irRegistrate.clicked.connect(MainWindowLogin.close)
         self.btn_PruebaFoxyBot.clicked.connect(self.prueba)
+        self.btn_PruebaFoxyBot.clicked.connect(MainWindowLogin.close)
 
     def prueba(self):
-        self.ventana = QtWidgets.QMainWindow()
+        self.ventana1 = QtWidgets.QMainWindow()
         from windows.VisitanteWindow import Ui_MainWindowVisitante
-        self.ui = Ui_MainWindowVisitante
-        self.ui.setupUi(self.ventana)
-        self.ventana.show()
+        self.ui = Ui_MainWindowVisitante()
+        self.ui.setupUi(self.ventana1)
+        self.ventana1.show()
     def registrarme(self):
         self.ventana = QtWidgets.QMainWindow()
         from windows.RegistroWindow import Ui_MainWindowRegistro
         self.ui = Ui_MainWindowRegistro()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
-        MainWindowLogin.close()
 
     def inicio(self):
         # Verifica que los campos no estén vacíos
         if self.input_Email.text() == "" or self.input_Password.text() == "":
             self.info_campos_texto()
-            return False
+
         else:
+
             self.datos = Conexion.DataBase()
 
             temp_entradas_email = self.input_Email.text()
@@ -206,15 +209,10 @@ class Ui_MainWindowLogin(object):
 
             dato1 = self.datos.buscar_usuarios(temp_entradas_email)
             dato2 = self.datos.busca_contra(temp_entradas_pass)
+            self.btn_iniciarSesion.clicked.connect(MainWindowLogin.close)
 
 
-            if dato1[0][0] == 0:
-                if dato2[0][0] == 0:
-                    self.abrir_Estudiante()
-                else:
-                    self.error_entrada()
-            else:
-                self.error_entrada()
+
 
 
     def vfnIngreso(self):
@@ -228,10 +226,14 @@ class Ui_MainWindowLogin(object):
             self.input_Email.setText("")
             MainWindowLogin.close()
             self.abrir_Estudiante()
-        elif str(self.input_Email.text()) == "admin" and str(self.input_Password.text()) == "1234":
+        elif str(self.input_Email.text()) == "12345678@loscabos.tecnm.mx" and str(self.input_Password.text()) == "1234":
             self.input_Email.setText("")
             MainWindowLogin.close()
             self.abrir_Admin()
+        elif str(self.input_Email.text()) == "editor@loscabos.tecnm.mx" and str(self.input_Password.text()) == "1234":
+            self.input_Email.setText("")
+            MainWindowLogin.close()
+            self.abrir_Editor()
         else:
             import tkinter
             from tkinter import messagebox
@@ -247,6 +249,12 @@ class Ui_MainWindowLogin(object):
         self.ventana = QtWidgets.QMainWindow()
         from windows.EstudianteWindow import Ui_MainWindowEstudiante
         self.ui = Ui_MainWindowEstudiante()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+    def abrir_Editor(self):
+        self.ventana = QtWidgets.QMainWindow()
+        from windows.EditorWindow import Ui_MainWindowEditor
+        self.ui = Ui_MainWindowEditor()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
     def info_campos_texto(self):

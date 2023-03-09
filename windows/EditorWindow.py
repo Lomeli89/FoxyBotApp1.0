@@ -535,6 +535,8 @@ class Ui_MainWindowEditor(object):
         self.btn_eliminar.clicked.connect(self.editar_solucion)
         self.btn_menu.clicked.connect(self.mostrar_soluciones)
         self.btn_cerrarSesion.clicked.connect(self.cerrar_sesion)
+        self.btn_enviar.clicked.connect(self.sendMessage)
+
         self.btn_cerrarSesion.clicked.connect(MainWindowEditor.close)
 
     def cerrar_sesion(self):

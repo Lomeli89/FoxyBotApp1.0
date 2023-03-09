@@ -42,12 +42,12 @@ class DataBase:
         self.conexion.commit()
         cur.close()
         return a
-    def gDatos(self, nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password):
+    def gDatos(self, nombre, apellido, correo_electronico, id_tipo_usuario, password):
         cur = self.conexion.cursor()
-        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`estatus`,`password`) VALUES (%s,%s,%s,%s,%s,%s)"
-        cur.execute(sql, (format(nombre), (apellido), (correo_electronico), (id_tipo_usuario), (estatus), (password)))
+        sql = "INSERT INTO `usuarios` (`nombre`,`apellido`,`correo_electronico`,`id_tipo_usuario`,`password`) VALUES (%s,%s,%s,%s,%s)"
+        cur.execute(sql, (format(nombre), (apellido), (correo_electronico), (id_tipo_usuario), (password)))
         self.conexion.commit()
-        print(nombre, apellido, correo_electronico, id_tipo_usuario, estatus, password)
+        print(nombre, apellido, correo_electronico, id_tipo_usuario, password)
     def bot_responde_pregunta(self, palabra_clave):
         cur = self.conexion.cursor()
         sql = "SELECT * FROM preguntas WHERE palabra_clave = {}".format(palabra_clave)

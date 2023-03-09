@@ -209,38 +209,24 @@ class Ui_MainWindowRegistro(object):
 
 
     def registro(self):
-        self.datos = Conexion.DataBase()
 
+        self.datos = Conexion.DataBase()
         temp_nombre = self.input_Nombre_Reg.text()
         temp_apellido = self.input_apellido_Reg.text()
         temp_correo_electronico = self.input_Email_Reg.text()
         temp_password = self.input_Password_Reg.text()
-        hashed_password = hashlib.sha256(temp_password.encode()).hexdigest()
-        temp_id_usuario = "0"
-        temp_estatus = "0"
-
-        temp_correo_electronico_1 = str("'" + temp_correo_electronico + "'")
-
-        dato1 = self.datos.busca_user(temp_correo_electronico_1)
-
-        if self.input_Nombre_Reg.text():
-            if dato1[0][0] == temp_correo_electronico:
-                self.correo_existente()
-                return False
-            else:
-                print(temp_nombre, temp_apellido, temp_correo_electronico, temp_id_usuario,
-                temp_estatus, temp_password)
-
-                self.datos.gDatos(temp_nombre, temp_apellido, temp_correo_electronico, temp_id_usuario,
-                                    temp_estatus, temp_password)
-                print("Registro correcto")
-                self.registro_exitoso()
-                self.input_Nombre_Reg.setText("")
-                self.input_apellido_Reg.setText("")
-                self.input_Email_Reg.setText("")
-                self.input_Password_Reg.setText("")
-        else:
+        if temp_nombre or temp_apellido or temp_correo_electronico or temp_password != str:
             self.info_campos_texto()
+        else:
+            hashed_password = hashlib.sha256(temp_password.encode()).hexdigest()
+            temp_id_usuario = "0"
+            self.datos.gDatos(temp_nombre, temp_apellido, temp_correo_electronico, temp_id_usuario, hashed_password)
+            print("Registro correcto")
+            self.registro_exitoso()
+            self.input_Nombre_Reg.setText("")
+            self.input_apellido_Reg.setText("")
+            self.input_Email_Reg.setText("")
+            self.input_Password_Reg.setText("")
 
 
     def info_campos_texto(self):

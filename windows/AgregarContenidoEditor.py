@@ -127,7 +127,7 @@ class Ui_agregarContenidoEditor(object):
         self.btn_Nuevo_2.setObjectName("btn_Nuevo_2")
 
         self.retranslateUi(agregarContenido)
-        self.btn_Nuevo_2.clicked.connect(agregarContenido.close) # type: ignore
+       6 self.btn_Nuevo_2.clicked.connect(agregarContenido.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(agregarContenido)
 
         self.btn_Nuevo.clicked.connect(self.guardarContenido)
